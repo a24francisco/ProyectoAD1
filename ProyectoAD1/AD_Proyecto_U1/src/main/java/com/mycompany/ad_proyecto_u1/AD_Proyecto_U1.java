@@ -22,7 +22,11 @@ public class AD_Proyecto_U1 {
 
     public static void main(String[] args) {
         try {
-            System.out.println(UtilidadesGson.leerApi());
+           Personaje p= new Personaje();
+           //p.genFraseAleatoria();
+            //System.out.println(UtilidadesGson.listarPersonajes(UtilidadesGson.leerApi()));
+            UtilidadesGson.filtrarNombre("Bart Simpson", UtilidadesGson.listarPersonajes(UtilidadesGson.leerApi()));
+            UtilidadesGson.filtrarID(8, UtilidadesGson.listarPersonajes(UtilidadesGson.leerApi()));
         } catch (IOException ex) {
             Logger.getLogger(AD_Proyecto_U1.class.getName()).log(Level.SEVERE, null, ex);
         }

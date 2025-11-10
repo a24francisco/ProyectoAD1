@@ -12,29 +12,84 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author dam2_alu01@inf.ald
  */
 public class UtilidadesGson {
-    public static API leerApi() throws MalformedURLException, IOException{
 
-               // Se abre la conexión
-            URL url = new URL("https://thesimpsonsapi.com/api/characters");
-            URLConnection conexion = url.openConnection();
-            conexion.connect();
-            
-            Gson gson = new Gson();
-            API api;
+    public static API leerApi() throws MalformedURLException, IOException {
 
-            // Lectura
-            InputStream is = conexion.getInputStream();
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
-            String datos = br.readLine();
-            api= gson.fromJson(datos, API.class);
+        // Se abre la conexión
+        URL url = new URL("https://thesimpsonsapi.com/api/characters");
+        URLConnection conexion = url.openConnection();
+        conexion.connect();
+        
+        Gson gson = new Gson();
+        API api;
 
+        // Lectura
+        InputStream is = conexion.getInputStream();
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        String datos = br.readLine();
+        api = gson.fromJson(datos, API.class);
+        
         return api;
+        
+    }
+    
+    public static List listarPersonajes(API api) {
+        
+        List<Personaje> personajes = new ArrayList<>();
+        for (Personaje a : api.getResults()) {
+            personajes.add(a);
+        }
+        
+        return personajes;
+    }
 
-}
+    public static void filtrarNombre(String nombre, List<Personaje> lista) {
+        int contador = 0;
+        Personaje x = new Personaje();
+        for (Personaje p : lista) {
+            if (nombre.equals(p.getName())) {
+                x = p;
+                contador++;
+                
+            }
+            
+        }
+        if (contador > 0) {
+            System.out.println(x);
+        } else {
+            System.out.println("Usuario no encontrado");
+        }
+        
+    }
+
+    public static void filtrarID(int id, List<Personaje> lista) {
+        
+        int contador = 0;
+        Personaje x = new Personaje();
+        if (id < 1 || id > lista.size()) {
+            System.out.println("Numero incorrecto. Por favor introduce un numero entre 1 y " + lista.size());
+        }
+        for (Personaje p : lista) {
+            if (id == p.getId()) {
+                x = p;
+                contador++;
+                
+            }
+            
+        }
+        if (contador > 0) {
+            System.out.println(x);
+        } else {
+            System.out.println("Usuario no encontrado");
+        }
+        
+    }
 }
