@@ -11,6 +11,8 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,28 +21,10 @@ import java.net.URLConnection;
 public class AD_Proyecto_U1 {
 
     public static void main(String[] args) {
-        Gson gson = new Gson();
         try {
-            // Se abre la conexión
-            URL url = new URL("https://thesimpsonsapi.com/api/characters");
-            URLConnection conexion = url.openConnection();
-            conexion.connect();
-
-            // Lectura
-            InputStream is = conexion.getInputStream();
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
-            String datos = br.readLine();
-            API api= gson.fromJson(datos, API.class);;
-            System.out.println(api);
-            
-
-            //System.out.println(datos);
-        } catch (MalformedURLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            System.out.println(UtilidadesGson.leerApi());
+        } catch (IOException ex) {
+            Logger.getLogger(AD_Proyecto_U1.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
