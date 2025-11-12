@@ -4,6 +4,8 @@
  */
 package com.mycompany.ad_proyecto_u1;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -11,7 +13,8 @@ import java.util.Random;
  *
  * @author dam2_alu01@inf.ald
  */
-public class Personaje {
+public class Personaje  implements Serializable{
+    private static final long serialVersionUID = 1L;
     private int id;
     private int age;
     
@@ -25,9 +28,42 @@ public class Personaje {
 
     @Override
     public String toString() {
-        return " id=" + id + ", name=" + name+", age=" + age + ", birthday=" + birthday + ", gender=" + gender +   ", occupation=" + occupation  + ", phrases=" + genFraseAleatoria() + ", status=" + status + '}';
+        return " id=" + id + ", name=" + name+", age=" + age + ", birthday=" + birthday + ", gender=" + gender +   ", occupation=" + occupation  + ", phrases=" + phrases + ", status=" + status + '}';
+    }
+
+    
+    
+    public void mostrarUsuario(){
+         
+        System.out.println("👤 Nombre: " + name);
+        System.out.println("🆔 ID: " + id);
+        System.out.println("🎂 Edad: " + age + " (" + birthday + ")");
+        System.out.println("⚧️ Género: " + gender);
+        System.out.println("💼 Ocupación: " + occupation);
+        System.out.println("📸 Imagen: " + portrait_path);
+        System.out.println("💬 Frases: " + genFraseAleatoria());
+        System.out.println("📜 Estado: " + status);
+    
+    
+    }
+
+  
+
+    public void crearPersonaje(int id, int age, String birthday, String gender, String name, String portrait_path, List<String> phrases,String occupation, String status) {
+        this.id = id;
+        this.age = age;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.name = name;
+        this.occupation = occupation;
+         this.portrait_path = portrait_path;
+         this.phrases = phrases;
+       
+        this.status = status;
+       
     }
     
+   
     public  String genFraseAleatoria(){
         Random r= new Random();
         int n= r.nextInt(0,phrases.size()-1);

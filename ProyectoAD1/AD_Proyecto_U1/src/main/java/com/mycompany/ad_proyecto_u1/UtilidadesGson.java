@@ -27,7 +27,7 @@ public class UtilidadesGson {
         URL url = new URL("https://thesimpsonsapi.com/api/characters");
         URLConnection conexion = url.openConnection();
         conexion.connect();
-        
+
         Gson gson = new Gson();
         API api;
 
@@ -36,42 +36,47 @@ public class UtilidadesGson {
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
         String datos = br.readLine();
         api = gson.fromJson(datos, API.class);
-        
+
         return api;
-        
+
     }
-    
+
     public static List listarPersonajes(API api) {
-        
+
         List<Personaje> personajes = new ArrayList<>();
         for (Personaje a : api.getResults()) {
             personajes.add(a);
         }
-        
+
         return personajes;
     }
+    public static void mostrarPersonaje(String nombre,List<Personaje> lista){
+        Personaje p=filtrarNombre(nombre,lista);
+       p.mostrarUsuario();
+    }
 
-    public static void filtrarNombre(String nombre, List<Personaje> lista) {
+    public static Personaje filtrarNombre(String nombre, List<Personaje> lista) {
         int contador = 0;
         Personaje x = new Personaje();
         for (Personaje p : lista) {
             if (nombre.equals(p.getName())) {
                 x = p;
                 contador++;
-                
+
             }
-            
+
         }
         if (contador > 0) {
-            System.out.println(x);
+            return x;
         } else {
             System.out.println("Usuario no encontrado");
+            return null;
         }
-        
-    }
 
-    public static void filtrarID(int id, List<Personaje> lista) {
-        
+    }
+/*
+    public static Personaje filtrarID(int id, List<Personaje> lista) {
+
         int contador = 0;
         Personaje x = new Personaje();
         if (id < 1 || id > lista.size()) {
@@ -81,15 +86,16 @@ public class UtilidadesGson {
             if (id == p.getId()) {
                 x = p;
                 contador++;
-                
+
             }
-            
+
         }
         if (contador > 0) {
-            System.out.println(x);
+            return x;
         } else {
             System.out.println("Usuario no encontrado");
+            return null;
         }
-        
-    }
+
+    }*/
 }
