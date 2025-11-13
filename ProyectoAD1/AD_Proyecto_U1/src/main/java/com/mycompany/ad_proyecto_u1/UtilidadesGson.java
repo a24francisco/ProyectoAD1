@@ -21,8 +21,8 @@ import java.util.List;
  */
 public class UtilidadesGson {
 
-    public static API leerApi() throws MalformedURLException, IOException {
-
+    public static List leerApi() throws MalformedURLException, IOException {
+        List<Personaje>personajes= new ArrayList<>();
         // Se abre la conexión
         URL url = new URL("https://thesimpsonsapi.com/api/characters");
         URLConnection conexion = url.openConnection();
@@ -37,65 +37,15 @@ public class UtilidadesGson {
         String datos = br.readLine();
         api = gson.fromJson(datos, API.class);
 
-        return api;
-
-    }
-
-    public static List listarPersonajes(API api) {
-
-        List<Personaje> personajes = new ArrayList<>();
         for (Personaje a : api.getResults()) {
             personajes.add(a);
         }
-
         return personajes;
-    }
-    public static void mostrarPersonaje(String nombre,List<Personaje> lista){
-        Personaje p=filtrarNombre(nombre,lista);
-       p.mostrarUsuario();
-    }
-
-    public static Personaje filtrarNombre(String nombre, List<Personaje> lista) {
-        int contador = 0;
-        Personaje x = new Personaje();
-        for (Personaje p : lista) {
-            if (nombre.equals(p.getName())) {
-                x = p;
-                contador++;
-
-            }
-
-        }
-        if (contador > 0) {
-            return x;
-        } else {
-            System.out.println("Usuario no encontrado");
-            return null;
-        }
 
     }
-/*
-    public static Personaje filtrarID(int id, List<Personaje> lista) {
 
-        int contador = 0;
-        Personaje x = new Personaje();
-        if (id < 1 || id > lista.size()) {
-            System.out.println("Numero incorrecto. Por favor introduce un numero entre 1 y " + lista.size());
-        }
-        for (Personaje p : lista) {
-            if (id == p.getId()) {
-                x = p;
-                contador++;
+  
+    
 
-            }
 
-        }
-        if (contador > 0) {
-            return x;
-        } else {
-            System.out.println("Usuario no encontrado");
-            return null;
-        }
-
-    }*/
 }

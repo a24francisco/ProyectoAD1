@@ -27,10 +27,11 @@ public class Usuario implements Serializable {
     public List<Personaje> buscados;
     public List<Personaje> total;
 
-    public Usuario(String nombre, String contraseña) {
+    public Usuario(String nombre, String contraseña) throws IOException {
         this.nombre = nombre;
         this.contraseña = contraseña;
         this.buscados = new ArrayList<>();
+        this.total = UtilidadesGson.leerApi();
     }
 
     public String getNombre() {
@@ -49,20 +50,24 @@ public class Usuario implements Serializable {
         this.contraseña = contraseña;
     }
 
-    public void añadirListado(Personaje p) {
-        buscados.add(p);
-    }
+  
 
-    public void mostrarLista() {
+    public void mostrarListaBuscados() {
         for (Personaje p : buscados) {
             System.out.println(p);
         }
     }
+     public void mostrarListaTotal() {
+        for (Personaje p : total) {
+            System.out.println(p);
+        }
+    }
 
-    public void SerializarBusqueda(String nombre) {
+
+    public void SerializarBusqueda() {
 
         try {
-            FileOutputStream fos = new FileOutputStream(nombre);
+            FileOutputStream fos = new FileOutputStream(nombre+".src");
 
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
@@ -77,13 +82,13 @@ public class Usuario implements Serializable {
 
     }
 
-    public void DesserializarBusqueda(String nombre) {
+    public List DesserializarBusqueda() {
         ArrayList<Personaje> busqueda = null;
 
-        try (FileInputStream fis = new FileInputStream(nombre); 
+        try (FileInputStream fis = new FileInputStream(nombre+".src"); 
                 ObjectInputStream ois = new ObjectInputStream(fis);) {
 
-            busqueda = (ArrayList) ois.readObject();
+            this.buscados = (ArrayList<Personaje>) ois.readObject();
 
         } catch (IOException ioe) {
             ioe.printStackTrace();
@@ -91,19 +96,20 @@ public class Usuario implements Serializable {
             System.out.println("Class not found");
             c.printStackTrace();
         }
+        return busqueda;
         
             
         
 
     }
-    public void SerializarLista(String nombre) {
+    public void SerializarLista() {
 
         try {
             FileOutputStream fos = new FileOutputStream(nombre+".list");
 
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-            oos.writeObject(buscados);
+            oos.writeObject(total);
 
             oos.close();
 
@@ -114,13 +120,13 @@ public class Usuario implements Serializable {
 
     }
 
-    public void DesserializarLista(String nombre) {
-        ArrayList<Personaje> busqueda = null;
+    public List  DesserializarLista() {
+        ArrayList<Personaje> total = null;
 
         try (FileInputStream fis = new FileInputStream(nombre+".list"); 
                 ObjectInputStream ois = new ObjectInputStream(fis);) {
 
-            busqueda = (ArrayList) ois.readObject();
+            this.total = (ArrayList<Personaje>) ois.readObject();
 
         } catch (IOException ioe) {
             ioe.printStackTrace();
@@ -128,6 +134,7 @@ public class Usuario implements Serializable {
             System.out.println("Class not found");
             c.printStackTrace();
         }
+        return total;
         
             
         
@@ -135,20 +142,44 @@ public class Usuario implements Serializable {
     }
     
     public void crearPersonaje(Personaje p){
+        if (p==null){return;}
         
         int contador=0;
-        for (int i = 0; i < buscados.size()-1; i++) {
-            if (buscados.get(i).getId()==p.getId()) {
+        for (int i = 0; i < total.size(); i++) {
+            if (total.get(i).getId()==p.getId()) {
                 contador++;
             }
            
         }
-        if (contador<0) {
+        if (contador>0) {
             System.out.println("ID ya existenete");
         }
         else{
        total.add(p);
         }
+    }
+    public  Personaje filtrarNombre(String nombre) {
+        int contador = 0;
+        Personaje x = new Personaje();
+        nombre=nombre.toUpperCase();
+        for (Personaje p : total) {
+            if (nombre.equals(p.getName().toUpperCase())) {
+                x = p;
+                contador++;
+
+            }
+
+        }
+        if (contador > 0) {
+             x.mostrarUsuario();
+              buscados.add(x);
+            return x;
+          
+        } else {
+            System.out.println("Usuario no encontrado");
+            return null;
+        }
+
     }
 
 }

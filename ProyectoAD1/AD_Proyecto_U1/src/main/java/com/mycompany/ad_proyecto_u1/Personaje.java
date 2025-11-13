@@ -35,31 +35,33 @@ public class Personaje  implements Serializable{
     
     public void mostrarUsuario(){
          
-        System.out.println("👤 Nombre: " + name);
-        System.out.println("🆔 ID: " + id);
-        System.out.println("🎂 Edad: " + age + " (" + birthday + ")");
-        System.out.println("⚧️ Género: " + gender);
-        System.out.println("💼 Ocupación: " + occupation);
-        System.out.println("📸 Imagen: " + portrait_path);
-        System.out.println("💬 Frases: " + genFraseAleatoria());
-        System.out.println("📜 Estado: " + status);
+        System.out.println(" Nombre: " + name);
+        System.out.println(" ID: " + id);
+        System.out.println(" Edad: " + age + " (" + birthday + ")");
+        System.out.println("️ Género: " + gender);
+        System.out.println(" Ocupación: " + occupation);
+        System.out.println(" Imagen: " + portrait_path);
+        System.out.println(" Frases: " + genFraseAleatoria());
+        System.out.println(" Estado: " + status);
     
     
     }
 
   
 
-    public void crearPersonaje(int id, int age, String birthday, String gender, String name, String portrait_path, List<String> phrases,String occupation, String status) {
-        this.id = id;
-        this.age = age;
-        this.birthday = birthday;
-        this.gender = gender;
-        this.name = name;
-        this.occupation = occupation;
-         this.portrait_path = portrait_path;
-         this.phrases = phrases;
+    public  static Personaje crearPersonaje(int id, int age, String birthday, String gender, String name, String portrait_path, List<String> phrases,String occupation, String status) {
+        Personaje p= new Personaje();
+        p.id = id;
+        p.age = age;
+        p.birthday = birthday;
+        p.gender = gender;
+        p.name = name;
+        p.occupation = occupation;
+         p.portrait_path = portrait_path;
+         p.phrases = phrases;
        
-        this.status = status;
+        p.status = status;
+        return p;
        
     }
     
