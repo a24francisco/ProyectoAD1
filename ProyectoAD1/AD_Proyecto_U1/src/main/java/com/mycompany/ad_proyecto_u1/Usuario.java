@@ -24,6 +24,7 @@ public class Usuario {
     private String nombre;
     private String contraseña;
     private File usuarios = new File("usuarios.txt");
+    private File registro = new File("registro.txt");
     public List<Personaje> buscados;
     public List<Personaje> total;
     
@@ -66,8 +67,7 @@ public class Usuario {
     }
     
     public void guardarHistorial(String usuario, String resultado){
-        //TODO BufferedWriter
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(usuarios))){
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(registro))){
             bw.write(usuario + ":" + resultado);
             bw.newLine();
         } catch (IOException e){
@@ -107,13 +107,9 @@ public class Usuario {
 
         try {
             FileOutputStream fos = new FileOutputStream(nombre+".src");
-
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-
             oos.writeObject(buscados);
-
             oos.close();
-
             fos.close();
         } catch (IOException ex) {
             Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
