@@ -32,6 +32,8 @@ public class Usuario implements Serializable {
         this.contraseña = contraseña;
         this.buscados = new ArrayList<>();
         this.total = UtilidadesGson.leerApi();
+        DesserializarLista();
+        DesserializarBusqueda();
     }
 
     public String getNombre() {
@@ -64,7 +66,7 @@ public class Usuario implements Serializable {
     }
 
 
-    public void SerializarBusqueda() {
+    private void SerializarBusqueda() {
 
         try {
             FileOutputStream fos = new FileOutputStream(nombre+".src");
@@ -82,8 +84,8 @@ public class Usuario implements Serializable {
 
     }
 
-    public List DesserializarBusqueda() {
-        ArrayList<Personaje> busqueda = null;
+    private List DesserializarBusqueda() {
+      
 
         try (FileInputStream fis = new FileInputStream(nombre+".src"); 
                 ObjectInputStream ois = new ObjectInputStream(fis);) {
@@ -96,13 +98,13 @@ public class Usuario implements Serializable {
             System.out.println("Class not found");
             c.printStackTrace();
         }
-        return busqueda;
+        return buscados;
         
             
         
 
     }
-    public void SerializarLista() {
+    private void SerializarLista() {
 
         try {
             FileOutputStream fos = new FileOutputStream(nombre+".list");
@@ -120,7 +122,7 @@ public class Usuario implements Serializable {
 
     }
 
-    public List  DesserializarLista() {
+    private List  DesserializarLista() {
         ArrayList<Personaje> total = null;
 
         try (FileInputStream fis = new FileInputStream(nombre+".list"); 
@@ -142,6 +144,7 @@ public class Usuario implements Serializable {
     }
     
     public void crearPersonaje(Personaje p){
+       
         if (p==null){return;}
         
         int contador=0;
@@ -156,9 +159,11 @@ public class Usuario implements Serializable {
         }
         else{
        total.add(p);
+       SerializarLista();
         }
     }
     public  Personaje filtrarNombre(String nombre) {
+       
         int contador = 0;
         Personaje x = new Personaje();
         nombre=nombre.toUpperCase();
@@ -173,6 +178,7 @@ public class Usuario implements Serializable {
         if (contador > 0) {
              x.mostrarUsuario();
               buscados.add(x);
+              SerializarBusqueda();
             return x;
           
         } else {
@@ -180,6 +186,27 @@ public class Usuario implements Serializable {
             return null;
         }
 
+    }
+    
+    public void delUsuario(String nombre){
+        int contador=0;
+        nombre= nombre.toUpperCase();
+        Personaje x= new Personaje();
+        for(Personaje per:total){
+            if (per.getName().toUpperCase().equals(nombre)) {
+                
+                x=per;
+                contador++;
+            }
+        }
+        if (contador>0) {
+            x.mostrarUsuario();
+            total.remove(x);
+            SerializarLista();
+        }
+        System.out.println(contador);
+       
+        
     }
 
 }

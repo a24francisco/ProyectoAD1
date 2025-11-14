@@ -15,29 +15,26 @@ import java.util.List;
 public class AD_Proyecto_U1 {
 
     public static void main(String[] args) throws IOException {
-        Usuario u = new Usuario("Invitado", " ");
-        
-        Personaje p= Personaje.crearPersonaje( 101,                   
-    30,                           
-    "12 de mayo de 1995",         
-    "Masculino",                  
-    "Ezequiel Vargas",             
-    "imagenes/ezequiel.png",       
-     Arrays.asList("Nunca es tarde para aprender.", "El conocimiento es poder."),                        
-    "Ingeniero de software",       
-    "Activo"                       );
-        
-        
-        u.crearPersonaje(p);
-        u.filtrarNombre("Homer SImpson");
-        
-        
-        
-        u.filtrarNombre("Bart Simpson");
-       
-        u.mostrarListaBuscados();
-        
-        
+        Usuario us = new Usuario("Invitadsssso", " ");
+                 Personaje p1 = Personaje.crearPersonaje(
+    201,                             // id
+    27,                              // age
+    "15 de agosto de 1997",          // birthday
+    "Femenino",                      // gender
+    "Lucia Fernandez",               // name
+    "imagenes/lucia.png",            // portrait_path
+    Arrays.asList(                   // phrases
+        "Siempre hay una solución.",
+        "La paciencia es poder.",
+        "No temas avanzar lento, teme no avanzar."
+    ),
+    "Analista de datos",             // occupation
+    "Activo"                         // status
+);     
+      
+     
+        us.mostrarListaBuscados();
+        us.mostrarListaTotal();
         
         
         
