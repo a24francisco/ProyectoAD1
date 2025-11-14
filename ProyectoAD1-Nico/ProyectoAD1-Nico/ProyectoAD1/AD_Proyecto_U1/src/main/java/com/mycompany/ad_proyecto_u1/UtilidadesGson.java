@@ -1,5 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.ad_proyecto_u1;
 
@@ -16,31 +17,24 @@ import java.net.URLConnection;
  *
  * @author dam2_alu01@inf.ald
  */
-public class AD_Proyecto_U1 {
+public class UtilidadesGson {
+    public static API leerApi() throws MalformedURLException, IOException{
 
-    public static void main(String[] args) {
-        Gson gson = new Gson();
-        try {
-            // Se abre la conexión
+               // Se abre la conexión
             URL url = new URL("https://thesimpsonsapi.com/api/characters");
             URLConnection conexion = url.openConnection();
             conexion.connect();
+            
+            Gson gson = new Gson();
+            API api;
 
             // Lectura
             InputStream is = conexion.getInputStream();
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
             String datos = br.readLine();
-            API api= gson.fromJson(datos, API.class);;
-            System.out.println(api);
-            
+            api= gson.fromJson(datos, API.class);
 
-            //System.out.println(datos);
-        } catch (MalformedURLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
+        return api;
+
+}
 }
