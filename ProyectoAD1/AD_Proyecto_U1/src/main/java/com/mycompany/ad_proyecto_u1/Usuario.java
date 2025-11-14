@@ -3,9 +3,18 @@ package com.mycompany.ad_proyecto_u1;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,10 +24,16 @@ public class Usuario {
     private String nombre;
     private String contraseña;
     private File usuarios = new File("usuarios.txt");
+    public List<Personaje> buscados;
+    public List<Personaje> total;
     
-    public Usuario(String nombre, String contraseña){
+    public Usuario(String nombre, String contraseña) throws IOException{
         this.nombre = nombre;
         this.contraseña = contraseña;
+        this.buscados = new ArrayList<>();
+        this.total = UtilidadesGson.leerApi();
+        DesserializarLista();
+        DesserializarBusqueda();
     }
 
     public boolean validarUsuario(String usuario, String contraseña) {
@@ -52,6 +67,12 @@ public class Usuario {
     
     public void guardarHistorial(String usuario, String resultado){
         //TODO BufferedWriter
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(usuarios))){
+            bw.write(usuario + ":" + resultado);
+            bw.newLine();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
     
     public String getNombre() {
@@ -70,4 +91,139 @@ public class Usuario {
         this.contraseña = contraseña;
     }
     
+    public void mostrarListaBuscados() {
+        for (Personaje p : buscados) {
+            System.out.println(p);
+        }
+    }
+     public void mostrarListaTotal() {
+        for (Personaje p : total) {
+            System.out.println(p);
+        }
+    }
+
+
+    private void SerializarBusqueda() {
+
+        try {
+            FileOutputStream fos = new FileOutputStream(nombre+".src");
+
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            oos.writeObject(buscados);
+
+            oos.close();
+
+            fos.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    private List DesserializarBusqueda() {
+        try (FileInputStream fis = new FileInputStream(nombre+".src"); 
+                ObjectInputStream ois = new ObjectInputStream(fis);) {
+
+            this.buscados = (ArrayList<Personaje>) ois.readObject();
+
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } catch (ClassNotFoundException c) {
+            System.out.println("Class not found");
+            c.printStackTrace();
+        }
+        return buscados;
+    }
+    
+    private void SerializarLista() {
+        try {
+            FileOutputStream fos = new FileOutputStream(nombre+".list");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(total);
+            oos.close();
+            fos.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private List  DesserializarLista() {
+        ArrayList<Personaje> total = null;
+
+        try (FileInputStream fis = new FileInputStream(nombre+".list"); 
+            ObjectInputStream ois = new ObjectInputStream(fis);) {
+
+            this.total = (ArrayList<Personaje>) ois.readObject();
+
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        } catch (ClassNotFoundException c) {
+            System.out.println("Class not found");
+            c.printStackTrace();
+        }
+        return total;
+    }
+    
+    public void crearPersonaje(Personaje p){
+       
+        if (p==null){return;}
+        
+        int contador=0;
+        for (int i = 0; i < total.size(); i++) {
+            if (total.get(i).getId()==p.getId()) {
+                contador++;
+            }
+        }
+        if (contador>0) {
+            System.out.println("ID ya existente");
+        }
+        else{
+       total.add(p);
+       SerializarLista();
+        }
+    }
+    
+    public  Personaje filtrarNombre(String nombre) {
+       
+        int contador = 0;
+        Personaje x = new Personaje();
+        nombre=nombre.toUpperCase();
+        
+        for (Personaje p : total) {
+            if (nombre.equals(p.getName().toUpperCase())) {
+                x = p;
+                contador++;
+            }
+        }
+        
+        if (contador > 0) {
+             x.mostrarUsuario();
+              buscados.add(x);
+              SerializarBusqueda();
+            return x;
+          
+        } else {
+            System.out.println("Usuario no encontrado");
+            return null;
+        }
+    }
+    
+    public void delUsuario(String nombre){
+        int contador=0;
+        nombre= nombre.toUpperCase();
+        Personaje x= new Personaje();
+        for(Personaje per:total){
+            if (per.getName().toUpperCase().equals(nombre)) {
+                x=per;
+                contador++;
+            }
+        }
+        if (contador>0) {
+            x.mostrarUsuario();
+            total.remove(x);
+            SerializarLista();
+        }
+        System.out.println(contador);
+    }
 }
