@@ -3,16 +3,14 @@ package com.mycompany.ad_proyecto_u1;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 
 
 public class SimpsonController {
     
     private SimpsonFrame view;
-    private Usuario u ;
 
-    public SimpsonController(SimpsonFrame view) throws IOException {
+    public SimpsonController(SimpsonFrame view) {
         this.view = view;
         this.view.addBuscarActionListener(this.getBuscarActionListener());
         this.view.addIniciarSesionActionListener(this.getIniciarSesionActionListener());
@@ -21,7 +19,6 @@ public class SimpsonController {
         this.view.addAccederActionListener(this.getAccederActionListener());
         this.view.addOcultarButonActionListener(this.getOcultarActionListener());
         this.view.initComponentes();
-        u = new Usuario("Nico","ABC"); 
     
     }
     
@@ -31,14 +28,7 @@ public class SimpsonController {
     ActionListener al = new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent ae) {
-            
-            String nombre = view.getNombre();
-            System.out.println(nombre);
-            Personaje p = u.filtrarNombre(nombre);
-           
-           
-            view.setID(p.getId());
-            
+
             
         }
     };

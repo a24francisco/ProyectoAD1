@@ -194,7 +194,7 @@ public class Usuario {
         }
         
         if (contador > 0) {
-            // x.mostrarUsuario();
+             x.mostrarUsuario();
               buscados.add(x);
               SerializarBusqueda();
             return x;

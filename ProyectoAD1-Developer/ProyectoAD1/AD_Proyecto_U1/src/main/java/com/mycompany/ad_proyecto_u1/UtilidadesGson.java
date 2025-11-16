@@ -12,34 +12,29 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author dam2_alu01@inf.ald
  */
 public class UtilidadesGson {
-     public static List leerApi() throws MalformedURLException, IOException {
-        List<Personaje>personajes= new ArrayList<>();
-        // Se abre la conexión
-        URL url = new URL("https://thesimpsonsapi.com/api/characters");
-        URLConnection conexion = url.openConnection();
-        conexion.connect();
+    public static API leerApi() throws MalformedURLException, IOException{
 
-        Gson gson = new Gson();
-        API api;
+               // Se abre la conexión
+            URL url = new URL("https://thesimpsonsapi.com/api/characters");
+            URLConnection conexion = url.openConnection();
+            conexion.connect();
+            
+            Gson gson = new Gson();
+            API api;
 
-        // Lectura
-        InputStream is = conexion.getInputStream();
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
-        String datos = br.readLine();
-        api = gson.fromJson(datos, API.class);
+            // Lectura
+            InputStream is = conexion.getInputStream();
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            String datos = br.readLine();
+            api= gson.fromJson(datos, API.class);
 
-        for (Personaje a : api.getResults()) {
-            personajes.add(a);
-        }
-        return personajes;
+        return api;
 
-    }
+}
 }

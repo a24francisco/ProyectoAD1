@@ -128,11 +128,6 @@ public class SimpsonFrame extends javax.swing.JFrame {
         buscarButton.setFont(new java.awt.Font("Inter Regular", 3, 18)); // NOI18N
         buscarButton.setForeground(new java.awt.Color(255, 255, 255));
         buscarButton.setText("BUSCAR");
-        buscarButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarButtonActionPerformed(evt);
-            }
-        });
 
         TITULOLabel.setFont(new java.awt.Font("Comic Sans MS", 3, 30)); // NOI18N
         TITULOLabel.setText("SIMPSONSAPI");
@@ -305,9 +300,9 @@ public class SimpsonFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(buscarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
-                                .addComponent(crearPersonajeButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(buscarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(crearPersonajeButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(113, 113, 113)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -438,10 +433,6 @@ public class SimpsonFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_crearCuentaButtonActionPerformed
 
-    private void buscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buscarButtonActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -525,16 +516,6 @@ public class SimpsonFrame extends javax.swing.JFrame {
         label.setHorizontalAlignment(JLabel.CENTER);
         
         this.getContentPane().add(label).setVisible(true);
-    }
-    
-    public String getNombre(){
-    
-        return this.nombreTextField.getText();
-    }
-    
-    public void setID(int id){
-    
-        this.IDTextField.setText(Integer.toString(id));
     }
     
    
