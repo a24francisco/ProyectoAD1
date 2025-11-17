@@ -80,28 +80,32 @@ public class SimpsonController {
         return al;
     }
     public ActionListener getAccederActionListener(){
-       
+
     ActionListener al = new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent ae) {
-        
-        
+            u.validarUsuario(view.getUsuarioIniciarTextField(), view.getContraseñaIniciarTextField());
+            view.setUsuarioActivoLabel(view.getUsuarioIniciarTextField());
+            System.out.println("Sesion iniciada correctamente");
         }
     };
         return al;
     }
-        public ActionListener getRegistrarseActionListener(){
+    public ActionListener getRegistrarseActionListener(){
        
     ActionListener al = new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent ae) {
-        
-        
+            u.registrarUsuario(view.getUsuarioRegistroTextField(), view.getContraseñaRegistroTextField());
+            System.out.println("Usuario registrado correctamente");
         }
     };
         return al;
     }
-          public ActionListener getOcultarActionListener(){
+    
+    
+    
+    public ActionListener getOcultarActionListener(){
        
     ActionListener al = new ActionListener(){
         @Override

@@ -515,12 +515,12 @@ public class SimpsonFrame extends javax.swing.JFrame {
      
 
     public void setColorRegistroPanel() {
-        this.crearCuentaPanel.setBackground(Color.yellow);
+        this.crearCuentaPanel.setBackground(new Color(255,204,0));
 
     }
 
     public void setColorInicioSesionPanel() {
-        this.iniciarSesionPanel.setBackground(Color.yellow);
+        this.iniciarSesionPanel.setBackground(new Color(255,204,0));
 
     }
 
@@ -577,6 +577,26 @@ public class SimpsonFrame extends javax.swing.JFrame {
     public void setFrase(String frase) {
 
         this.fraseTextField.setText(frase);
+    }
+    
+    public String getUsuarioRegistroTextField(){
+        return this.usuarioRegistroTextField.getText();
+    }
+    
+    public String getContraseñaRegistroTextField(){
+        return this.contraseñaRegistroTextField.getText();
+    }
+    
+    public String getUsuarioIniciarTextField(){
+        return this.usuarioInicioSesionTextField.getText();
+    }
+    
+    public String getContraseñaIniciarTextField(){
+        return this.contraseñaInicioSesionTextField.getText();
+    }
+    
+    public void setUsuarioActivoLabel(String text){
+        this.usuarioActivoLabel.setText(text);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IDLabel;
