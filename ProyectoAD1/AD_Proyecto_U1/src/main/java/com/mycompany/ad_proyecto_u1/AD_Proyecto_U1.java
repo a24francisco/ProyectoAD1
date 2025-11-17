@@ -3,10 +3,16 @@
  */
 package com.mycompany.ad_proyecto_u1;
 
+import com.google.gson.Gson;
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,36 +20,18 @@ import java.util.List;
  */
 public class AD_Proyecto_U1 {
 
-    public static void main(String[] args) throws IOException {
-        Usuario us = new Usuario("Invitadsssso", " ");
-                 Personaje p1 = Personaje.crearPersonaje(
-    201,                             // id
-    27,                              // age
-    "15 de agosto de 1997",          // birthday
-    "Femenino",                      // gender
-    "Lucia Fernandez",               // name
-    "imagenes/lucia.png",            // portrait_path
-    Arrays.asList(                   // phrases
-        "Siempre hay una solución.",
-        "La paciencia es poder.",
-        "No temas avanzar lento, teme no avanzar."
-    ),
-    "Analista de datos",             // occupation
-    "Activo"                         // status
-);     
-      
-     
-        us.mostrarListaBuscados();
-        us.mostrarListaTotal();
-        
-        
-        
-        
-        
-    
-       
-        
-        
+    public static void main(String[] args) {
+        try {
+            SimpsonFrame smf = new SimpsonFrame();
+            SimpsonController smc = new SimpsonController(smf);
+            smf.setVisible(true);
+            
+            Usuario u = new Usuario("Usuario1","abc123.");
+           
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(AD_Proyecto_U1.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
 }

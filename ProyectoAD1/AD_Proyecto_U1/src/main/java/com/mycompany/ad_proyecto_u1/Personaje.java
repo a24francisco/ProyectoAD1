@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.ad_proyecto_u1;
 
 import java.io.Serializable;
@@ -31,8 +27,6 @@ public class Personaje  implements Serializable{
         return " id=" + id + ", name=" + name+", age=" + age + ", birthday=" + birthday + ", gender=" + gender +   ", occupation=" + occupation  + ", phrases=" + phrases + ", status=" + status + '}';
     }
 
-    
-    
     public void mostrarUsuario(){
          
         System.out.println(" Nombre: " + name);
@@ -43,11 +37,7 @@ public class Personaje  implements Serializable{
         System.out.println(" Imagen: " + portrait_path);
         System.out.println(" Frases: " + genFraseAleatoria());
         System.out.println(" Estado: " + status);
-    
-    
     }
-
-  
 
     public  static Personaje crearPersonaje(int id, int age, String birthday, String gender, String name, String portrait_path, List<String> phrases,String occupation, String status) {
         Personaje p= new Personaje();
@@ -57,15 +47,13 @@ public class Personaje  implements Serializable{
         p.gender = gender;
         p.name = name;
         p.occupation = occupation;
-         p.portrait_path = portrait_path;
-         p.phrases = phrases;
+        p.portrait_path = portrait_path;
+        p.phrases = phrases;
        
         p.status = status;
         return p;
-       
     }
     
-   
     public  String genFraseAleatoria(){
         Random r= new Random();
         int n= r.nextInt(0,phrases.size()-1);
@@ -79,10 +67,6 @@ public class Personaje  implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-
-    
-    
-    
 
     public int getId() {
         return id;
@@ -147,6 +131,4 @@ public class Personaje  implements Serializable{
     public void setStatus(String status) {
         this.status = status;
     }
-    
-    
 }

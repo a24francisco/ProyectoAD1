@@ -20,8 +20,7 @@ import java.util.List;
  * @author dam2_alu01@inf.ald
  */
 public class UtilidadesGson {
-
-    public static List leerApi() throws MalformedURLException, IOException {
+     public static List leerApi() throws MalformedURLException, IOException {
         List<Personaje>personajes= new ArrayList<>();
         // Se abre la conexión
         URL url = new URL("https://thesimpsonsapi.com/api/characters");
@@ -43,9 +42,4 @@ public class UtilidadesGson {
         return personajes;
 
     }
-
-  
-    
-
-
 }
