@@ -26,7 +26,10 @@ public class AD_Proyecto_U1 {
             SimpsonController smc = new SimpsonController(smf);
             smf.setVisible(true);
             
-            System.out.println(UtilidadesGson.leerApi());
+            Usuario u = new Usuario("Usuario1","abc123.");
+           
+            
+            
         } catch (IOException ex) {
             Logger.getLogger(AD_Proyecto_U1.class.getName()).log(Level.SEVERE, null, ex);
         }

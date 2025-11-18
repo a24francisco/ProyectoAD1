@@ -17,6 +17,14 @@ public class API {
     private int pages=60;
     private List<Personaje> results;
 
+    public List<Personaje> getResults() {
+        return results;
+    }
+
+    public void setResults(List<Personaje> results) {
+        this.results = results;
+    }
+
     public API(int count, String next, String prev) {
         this.count = count;
         this.next = next;

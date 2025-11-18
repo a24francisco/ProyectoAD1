@@ -5,10 +5,14 @@
 package com.mycompany.ad_proyecto_u1;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 
 /**
  *
@@ -20,13 +24,13 @@ public class SimpsonFrame extends javax.swing.JFrame {
      * Creates new form SimpsonFrame
      */
     public SimpsonFrame() {
-         initComponents();
-         setColor();
-         setColorRegistroPanel();
-         setColorInicioSesionPanel();
-         resizeWindow();
-         mostrarImagen();
-        
+
+        initComponents();
+        setColor();
+        setColorRegistroPanel();
+        setColorInicioSesionPanel();
+        this.setTitle("Buscador principal");
+
     }
 
     /**
@@ -46,7 +50,7 @@ public class SimpsonFrame extends javax.swing.JFrame {
         fraseLabel = new javax.swing.JLabel();
         nombreTextField = new javax.swing.JTextField();
         edadTextField = new javax.swing.JTextField();
-        cumpleañosTextField = new javax.swing.JTextField();
+        cumpleanhosTextField = new javax.swing.JTextField();
         fraseTextField = new javax.swing.JTextField();
         generoTextField = new javax.swing.JTextField();
         trabajoTextField = new javax.swing.JTextField();
@@ -73,10 +77,11 @@ public class SimpsonFrame extends javax.swing.JFrame {
         IDTextField = new javax.swing.JTextField();
         crearCuentaButton = new javax.swing.JButton();
         crearPersonajeButton = new javax.swing.JButton();
-        crearPersonajeButton1 = new javax.swing.JButton();
+        borrarButton = new javax.swing.JButton();
+        editarButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 51));
+        setBackground(new java.awt.Color(255, 204, 0));
 
         nombreLabel.setFont(new java.awt.Font("Inter Regular", 1, 24)); // NOI18N
         nombreLabel.setText("Nombre:");
@@ -103,9 +108,9 @@ public class SimpsonFrame extends javax.swing.JFrame {
             }
         });
 
-        cumpleañosTextField.addActionListener(new java.awt.event.ActionListener() {
+        cumpleanhosTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cumpleañosTextFieldActionPerformed(evt);
+                cumpleanhosTextFieldActionPerformed(evt);
             }
         });
 
@@ -128,6 +133,11 @@ public class SimpsonFrame extends javax.swing.JFrame {
         buscarButton.setFont(new java.awt.Font("Inter Regular", 3, 18)); // NOI18N
         buscarButton.setForeground(new java.awt.Color(255, 255, 255));
         buscarButton.setText("BUSCAR");
+        buscarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarButtonActionPerformed(evt);
+            }
+        });
 
         TITULOLabel.setFont(new java.awt.Font("Comic Sans MS", 3, 30)); // NOI18N
         TITULOLabel.setText("SIMPSONSAPI");
@@ -269,10 +279,25 @@ public class SimpsonFrame extends javax.swing.JFrame {
         crearPersonajeButton.setForeground(new java.awt.Color(255, 255, 255));
         crearPersonajeButton.setText("CREAR PERSONAJE ");
 
-        crearPersonajeButton1.setBackground(new java.awt.Color(51, 51, 255));
-        crearPersonajeButton1.setFont(new java.awt.Font("Inter Regular", 3, 18)); // NOI18N
-        crearPersonajeButton1.setForeground(new java.awt.Color(255, 255, 255));
-        crearPersonajeButton1.setText("BORRAR");
+        borrarButton.setBackground(new java.awt.Color(51, 51, 255));
+        borrarButton.setFont(new java.awt.Font("Inter Regular", 3, 18)); // NOI18N
+        borrarButton.setForeground(new java.awt.Color(255, 255, 255));
+        borrarButton.setText("BORRAR");
+        borrarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borrarButtonActionPerformed(evt);
+            }
+        });
+
+        editarButton1.setBackground(new java.awt.Color(51, 51, 255));
+        editarButton1.setFont(new java.awt.Font("Inter Regular", 3, 18)); // NOI18N
+        editarButton1.setForeground(new java.awt.Color(255, 255, 255));
+        editarButton1.setText("EDITAR");
+        editarButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -284,10 +309,6 @@ public class SimpsonFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                 .addComponent(crearCuentaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(TITULOLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(usuarioActivoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(153, 153, 153)
@@ -298,32 +319,35 @@ public class SimpsonFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(nombreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(113, 113, 113)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(trabajoLabel)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(trabajoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(generoLabel)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(generoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(fraseLabel)
+                                            .addGap(60, 60, 60)
+                                            .addComponent(fraseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addComponent(ocultarButton)
+                                    .addGap(90, 90, 90)
+                                    .addComponent(crearCuentaButton)
+                                    .addGap(69, 69, 69)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(buscarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buscarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(crearPersonajeButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(113, 113, 113)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(trabajoLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(trabajoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(generoLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(generoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(fraseLabel)
-                                        .addGap(60, 60, 60)
-                                        .addComponent(fraseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(borrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(ocultarButton)
-                                .addGap(90, 90, 90)
-                                .addComponent(crearCuentaButton)
-                                .addGap(69, 69, 69))))
+                                .addComponent(editarButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -338,12 +362,19 @@ public class SimpsonFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(cumpleañosLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cumpleañosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(73, Short.MAX_VALUE))
+                                .addComponent(cumpleanhosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(40, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(crearPersonajeButton)
-                .addGap(280, 280, 280))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(TITULOLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(140, 140, 140)
+                        .addComponent(usuarioActivoLabel)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(crearPersonajeButton)
+                        .addGap(280, 280, 280))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,7 +389,8 @@ public class SimpsonFrame extends javax.swing.JFrame {
                             .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nombreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(buscarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(crearPersonajeButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(borrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editarButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(52, 52, 52)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(IDLabel)
@@ -374,7 +406,7 @@ public class SimpsonFrame extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cumpleañosLabel)
-                            .addComponent(cumpleañosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(cumpleanhosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(fraseLabel)
                         .addComponent(fraseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -425,106 +457,198 @@ public class SimpsonFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_accederButtonActionPerformed
 
-    private void cumpleañosTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cumpleañosTextFieldActionPerformed
+    private void cumpleanhosTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cumpleanhosTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cumpleañosTextFieldActionPerformed
+    }//GEN-LAST:event_cumpleanhosTextFieldActionPerformed
 
     private void crearCuentaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearCuentaButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_crearCuentaButtonActionPerformed
 
+    private void buscarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buscarButtonActionPerformed
+
+    private void borrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_borrarButtonActionPerformed
+
+    private void editarButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editarButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public void addBuscarActionListener(ActionListener al){
-    
+    public void addBuscarActionListener(ActionListener al) {
+
         this.buscarButton.addActionListener(al);
-    
+
     }
-    
-    public void addIniciarSesionActionListener(ActionListener al){
-    
+
+    public void addIniciarSesionActionListener(ActionListener al) {
+
         this.iniciarSesionButton.addActionListener(al);
     }
-    
-    public void addCrearCuenta(ActionListener al){
-        
+
+    public void addCrearCuenta(ActionListener al) {
+
         this.crearCuentaButton.addActionListener(al);
     }
-    
-    public void addRegistrarseActionListener(ActionListener al){
-    
+
+    public void addRegistrarseActionListener(ActionListener al) {
+
         this.registrarseButton.addActionListener(al);
     }
-    
-    public void addAccederActionListener(ActionListener al){
-    
+
+    public void addAccederActionListener(ActionListener al) {
+
         this.accederButton.addActionListener(al);
-    
+
     }
-    
-    public void addOcultarButonActionListener(ActionListener al){
-    
+
+    public void addOcultarActionListener(ActionListener al) {
+
         this.ocultarButton.addActionListener(al);
     }
-    
-    public void resizeWindow(){
-    
-    this.getContentPane().setLayout(null);
+
+    public void addCrearPersonajeActionListener(ActionListener al) {
+
+        this.crearPersonajeButton.addActionListener(al);
     }
-    
-    public void setColor(){
-    
-    this.getContentPane().setBackground(Color.yellow);
+       public void addBorrarPersonajeActionListener(ActionListener al) {
+
+        this.borrarButton.addActionListener(al);
     }
-    
-    public void setColorRegistroPanel(){
-    this.crearCuentaPanel.setBackground(Color.yellow);
-    
+       public void addEditarPersonajeActionListener(ActionListener al){
+       
+        this.buscarButton.addActionListener(al);
+       }
+
+    public void resizeWindow() {
+
+        this.getContentPane().setLayout(null);
     }
-    public void setColorInicioSesionPanel(){
-    this.iniciarSesionPanel.setBackground(Color.yellow);
-    
+
+    public void setFondo() {
+
+        this.getContentPane().createImage(WIDTH, HEIGHT);
     }
-    
-    public void setVisibleButtonInicioSesion(Boolean b){
-    
-    this.iniciarSesionPanel.setVisible(b);
-    
+
+    public void setColor() {
+
+        this.getContentPane().setBackground(new Color(255,204,0));
     }
-    
-    public void setVisibleButtonCrearCuenta(Boolean b){
-    
-    this.crearCuentaPanel.setVisible(b);
+     
+
+    public void setColorRegistroPanel() {
+        this.crearCuentaPanel.setBackground(new Color(255,204,0));
+
     }
-    
-    public void initComponentes(){
-        
-    this.iniciarSesionPanel.setVisible(false);
-    this.crearCuentaPanel.setVisible(false);
-    
+
+    public void setColorInicioSesionPanel() {
+        this.iniciarSesionPanel.setBackground(new Color(255,204,0));
+
     }
-    
-    public void mostrarImagen(){
-        
-        ImageIcon imagen = new ImageIcon("/home/dam2_alu11@inf.ald/Descargas/simpsonapi.png");
-        Image img = imagen.getImage();
-        Image nuevaImagen = img.getScaledInstance(400,200,Image.SCALE_SMOOTH);
-        ImageIcon imagenEscalada = new ImageIcon(nuevaImagen);
-        
-        JLabel label = new JLabel(imagenEscalada);
-        label.setHorizontalAlignment(JLabel.CENTER);
-        
-        this.getContentPane().add(label).setVisible(true);
+
+    public void setVisibleButtonInicioSesion(Boolean b) {
+
+        this.iniciarSesionPanel.setVisible(b);
+
     }
-    
+
+    public void setVisibleButtonCrearCuenta(Boolean b) {
+
+        this.crearCuentaPanel.setVisible(b);
+    }
+
+    public void initComponentes() {
+
+        this.iniciarSesionPanel.setVisible(false);
+        this.crearCuentaPanel.setVisible(false);
+
+    }
+
    
 
+    public String getNombre() {
+
+        return this.nombreTextField.getText();
+    }
+
+    public void setID(int id) {
+
+        this.IDTextField.setText(Integer.toString(id));
+    }
+
+    public void setEdad(int edad) {
+
+        this.edadTextField.setText(Integer.toString(edad));
+    }
+
+    public void setCumpleanhos(String cumpleanhos) {
+
+        this.cumpleanhosTextField.setText(cumpleanhos);
+    }
+
+    public void setTrabajo(String trabajo) {
+        this.trabajoTextField.setText(trabajo);
+
+    }
+    
+    public void setName(String name){
+    
+        this.nombreTextField.setText(name);
+    }
+
+    public void setGenero(String genero) {
+
+        this.generoTextField.setText(genero);
+    }
+
+    public void setFrase(String frase) {
+
+        this.fraseTextField.setText(frase);
+    }
+    
+    public String getUsuarioRegistroTextField(){
+        return this.usuarioRegistroTextField.getText();
+    }
+    
+    public String getContraseñaRegistroTextField(){
+        return this.contraseñaRegistroTextField.getText();
+    }
+    
+    public String getUsuarioIniciarTextField(){
+        return this.usuarioInicioSesionTextField.getText();
+    }
+    
+    public String getContraseñaIniciarTextField(){
+        return this.contraseñaInicioSesionTextField.getText();
+    }
+    
+    public String getUsuarioActivoLabel(){
+    
+        return this.usuarioActivoLabel.getText();
+    }
+    
+    public void setUsuarioActivoLabel(String text){
+        this.usuarioActivoLabel.setText(text);
+    }
+    
+    public void clearID() {
+    this.IDTextField.setText("");
+}
+
+public void clearEdad() {
+    this.edadTextField.setText("");
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IDLabel;
     private javax.swing.JTextField IDTextField;
     private javax.swing.JLabel TITULOLabel;
     private javax.swing.JButton accederButton;
+    private javax.swing.JButton borrarButton;
     private javax.swing.JButton buscarButton;
     private javax.swing.JLabel contraseñaInicioSesionLabel;
     private javax.swing.JTextField contraseñaInicioSesionTextField;
@@ -533,11 +657,11 @@ public class SimpsonFrame extends javax.swing.JFrame {
     private javax.swing.JButton crearCuentaButton;
     private javax.swing.JPanel crearCuentaPanel;
     private javax.swing.JButton crearPersonajeButton;
-    private javax.swing.JButton crearPersonajeButton1;
+    private javax.swing.JTextField cumpleanhosTextField;
     private javax.swing.JLabel cumpleañosLabel;
-    private javax.swing.JTextField cumpleañosTextField;
     private javax.swing.JLabel edadLabel;
     private javax.swing.JTextField edadTextField;
+    private javax.swing.JButton editarButton1;
     private javax.swing.JLabel fraseLabel;
     private javax.swing.JTextField fraseTextField;
     private javax.swing.JLabel generoLabel;
