@@ -586,7 +586,9 @@ public class SimpsonFrame extends javax.swing.JFrame {
      public String getFrase(){
          return this.fraseTextField.getText();
      }
-
+     public void  bloquearCampoId(){
+         this.IDTextField.setEditable(false);
+     }
    
 
     public String getNombre() {

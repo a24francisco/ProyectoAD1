@@ -34,7 +34,10 @@ public class SimpsonController {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+if (view.getUsuarioActivoLabel().equals("INVITADO")) {
 
+                    JOptionPane.showMessageDialog(view, "El invitado no puede acceder a la función de Borrar Personaje");
+                } else {
                 String nombre = view.getNombre();
                 u.delUsuario(nombre);
                 
@@ -47,7 +50,7 @@ public class SimpsonController {
                 view.setTrabajo("");
 
             }
-
+            }
         };
         return al;
 
@@ -69,7 +72,7 @@ public class SimpsonController {
                 view.setTrabajo(p.getOccupation());
                 view.setGenero(p.getGender());
                 view.setFrase(p.genFraseAleatoria());
-
+                view.bloquearCampoId();
             }
         };
         return al;
@@ -177,10 +180,14 @@ public class SimpsonController {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
+                if (view.getUsuarioActivoLabel().equals("INVITADO")) {
+
+                    JOptionPane.showMessageDialog(view, "El invitado no puede acceder a la función de Editar Personaje");
+                } else {
  
                
                 
-                int id=Integer.parseInt(view.getId());
+                
                 String nombre=view.getNombre();
                 int edad=Integer.parseInt(view.getEdad());
                 String cumple=view.getCumpleaños();
@@ -188,11 +195,11 @@ public class SimpsonController {
                 String genero=view.getGenero();
                 String frase=view.getFrase();
                 u.delUsuario(nombre);
-                Personaje x = Personaje.crearPersonaje(id,edad,cumple,genero,nombre,null,List.of(frase),trabajo,null);
+                Personaje x = Personaje.crearPersonaje(Integer.parseInt(view.getId()),edad,cumple,genero,nombre,null,List.of(frase),trabajo,null);
                 u.crearPersonaje(x);
                 
 
-            }
+            }}
         };
         return al;
     }
