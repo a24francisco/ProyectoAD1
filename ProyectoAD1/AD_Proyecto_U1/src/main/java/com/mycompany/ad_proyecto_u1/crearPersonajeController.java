@@ -41,8 +41,7 @@ public class crearPersonajeController {
                 String frase = view.getPhrases();
                 String genero =view.getGenero();
                 
-               Personaje p = Personaje.crearPersonaje(id,edad,cumpleaños,genero,nombre,null,List.of(frase),trabajo,null
-);
+               Personaje p = Personaje.crearPersonaje(id,edad,cumpleaños,genero,nombre,null,List.of(frase),trabajo,null);
                 u.crearPersonaje(p);
                 //System.out.println("Boton");
                 view.dispose();

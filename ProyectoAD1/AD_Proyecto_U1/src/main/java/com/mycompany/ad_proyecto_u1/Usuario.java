@@ -180,7 +180,7 @@ public class Usuario {
         }
     }
 
-    public void delUsuario(String nombre) {
+      public void delUsuario(String nombre) {
         int contador = 0;
         nombre = nombre.toUpperCase();
         Personaje x = new Personaje();
@@ -191,10 +191,10 @@ public class Usuario {
             }
         }
         if (contador > 0) {
-            x.mostrarUsuario();
+           // x.mostrarUsuario();
             total.remove(x);
             SerializarLista();
         }
         System.out.println(contador);
-    }
+    } 
 }

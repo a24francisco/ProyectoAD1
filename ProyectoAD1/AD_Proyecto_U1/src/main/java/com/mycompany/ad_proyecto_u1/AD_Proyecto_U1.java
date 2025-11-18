@@ -26,7 +26,7 @@ public class AD_Proyecto_U1 {
             SimpsonController smc = new SimpsonController(smf);
             smf.setVisible(true);
             
-            Usuario u = new Usuario("Usuario1","abc123.");
+            //Usuario u = new Usuario("Usuario1","abc123.");
            
             
             

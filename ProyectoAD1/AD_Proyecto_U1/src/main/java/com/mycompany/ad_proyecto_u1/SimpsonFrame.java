@@ -78,6 +78,7 @@ public class SimpsonFrame extends javax.swing.JFrame {
         crearCuentaButton = new javax.swing.JButton();
         crearPersonajeButton = new javax.swing.JButton();
         borrarButton = new javax.swing.JButton();
+        editarButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 0));
@@ -288,6 +289,16 @@ public class SimpsonFrame extends javax.swing.JFrame {
             }
         });
 
+        editarButton1.setBackground(new java.awt.Color(51, 51, 255));
+        editarButton1.setFont(new java.awt.Font("Inter Regular", 3, 18)); // NOI18N
+        editarButton1.setForeground(new java.awt.Color(255, 255, 255));
+        editarButton1.setText("EDITAR");
+        editarButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -308,32 +319,35 @@ public class SimpsonFrame extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(nombreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(113, 113, 113)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(trabajoLabel)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(trabajoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(generoLabel)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(generoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(fraseLabel)
+                                            .addGap(60, 60, 60)
+                                            .addComponent(fraseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addComponent(ocultarButton)
+                                    .addGap(90, 90, 90)
+                                    .addComponent(crearCuentaButton)
+                                    .addGap(69, 69, 69)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(buscarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
-                                .addComponent(borrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(113, 113, 113)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(trabajoLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(trabajoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(generoLabel)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(generoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(fraseLabel)
-                                        .addGap(60, 60, 60)
-                                        .addComponent(fraseTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(ocultarButton)
-                                .addGap(90, 90, 90)
-                                .addComponent(crearCuentaButton)
-                                .addGap(69, 69, 69))))
+                                .addComponent(borrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(editarButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -349,7 +363,7 @@ public class SimpsonFrame extends javax.swing.JFrame {
                                 .addComponent(cumpleañosLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(cumpleanhosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -375,7 +389,8 @@ public class SimpsonFrame extends javax.swing.JFrame {
                             .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nombreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(buscarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(borrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(borrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editarButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(52, 52, 52)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(IDLabel)
@@ -458,6 +473,10 @@ public class SimpsonFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_borrarButtonActionPerformed
 
+    private void editarButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editarButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -501,6 +520,10 @@ public class SimpsonFrame extends javax.swing.JFrame {
 
         this.borrarButton.addActionListener(al);
     }
+       public void addEditarPersonajeActionListener(ActionListener al){
+       
+        this.editarButton1.addActionListener(al);
+       }
 
     public void resizeWindow() {
 
@@ -545,6 +568,24 @@ public class SimpsonFrame extends javax.swing.JFrame {
         this.crearCuentaPanel.setVisible(false);
 
     }
+    public String getEdad(){
+        return this.edadTextField.getText();
+    }
+    public String getId(){
+        return this.IDTextField.getText();
+    }
+    public String getCumpleaños(){
+        return this.cumpleanhosTextField.getText();
+    }
+     public String getTrabajo(){
+        return this.trabajoTextField.getText();
+    }
+      public String getGenero(){
+        return this.generoTextField.getText();
+    }
+     public String getFrase(){
+         return this.fraseTextField.getText();
+     }
 
    
 
@@ -571,6 +612,11 @@ public class SimpsonFrame extends javax.swing.JFrame {
     public void setTrabajo(String trabajo) {
         this.trabajoTextField.setText(trabajo);
 
+    }
+    
+    public void setName(String name){
+    
+        this.nombreTextField.setText(name);
     }
 
     public void setGenero(String genero) {
@@ -599,9 +645,22 @@ public class SimpsonFrame extends javax.swing.JFrame {
         return this.contraseñaInicioSesionTextField.getText();
     }
     
+    public String getUsuarioActivoLabel(){
+    
+        return this.usuarioActivoLabel.getText();
+    }
+    
     public void setUsuarioActivoLabel(String text){
         this.usuarioActivoLabel.setText(text);
     }
+    
+    public void clearID() {
+    this.IDTextField.setText("");
+}
+
+public void clearEdad() {
+    this.edadTextField.setText("");
+}
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IDLabel;
     private javax.swing.JTextField IDTextField;
@@ -620,6 +679,7 @@ public class SimpsonFrame extends javax.swing.JFrame {
     private javax.swing.JLabel cumpleañosLabel;
     private javax.swing.JLabel edadLabel;
     private javax.swing.JTextField edadTextField;
+    private javax.swing.JButton editarButton1;
     private javax.swing.JLabel fraseLabel;
     private javax.swing.JTextField fraseTextField;
     private javax.swing.JLabel generoLabel;
