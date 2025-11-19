@@ -2,12 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.ad_proyecto_u1;
+package controller;
 
+
+import com.mycompany.ad_proyecto_u1.crearPersonajeJDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.JOptionPane;
+import model.Personaje;
+import model.Registro;
+import model.Usuario;
 
 /**
  *

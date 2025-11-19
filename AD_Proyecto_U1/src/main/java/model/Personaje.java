@@ -1,4 +1,4 @@
-package com.mycompany.ad_proyecto_u1;
+package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -4,6 +4,7 @@
 package com.mycompany.ad_proyecto_u1;
 
 import com.google.gson.Gson;
+import controller.SimpsonController;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

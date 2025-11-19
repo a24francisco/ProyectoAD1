@@ -1,5 +1,9 @@
-package com.mycompany.ad_proyecto_u1;
+package controller;
 
+
+import com.mycompany.ad_proyecto_u1.SimpsonFrame;
+
+import com.mycompany.ad_proyecto_u1.crearPersonajeJDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -7,6 +11,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import model.Personaje;
+import model.Registro;
+import model.Usuario;
 
 public class SimpsonController {
 
