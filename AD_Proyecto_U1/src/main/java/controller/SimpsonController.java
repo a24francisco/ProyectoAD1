@@ -1,9 +1,9 @@
 package controller;
 
 
-import com.mycompany.ad_proyecto_u1.SimpsonFrame;
+import View.SimpsonFrame;
 
-import com.mycompany.ad_proyecto_u1.crearPersonajeJDialog;
+import View.crearPersonajeJDialog;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;

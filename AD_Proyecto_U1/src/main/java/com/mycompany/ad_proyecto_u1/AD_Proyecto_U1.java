@@ -3,6 +3,7 @@
  */
 package com.mycompany.ad_proyecto_u1;
 
+import View.SimpsonFrame;
 import com.google.gson.Gson;
 import controller.SimpsonController;
 import java.io.BufferedReader;

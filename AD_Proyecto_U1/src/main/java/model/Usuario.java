@@ -1,6 +1,6 @@
 package model;
 
-import com.mycompany.ad_proyecto_u1.SimpsonFrame;
+import View.SimpsonFrame;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
