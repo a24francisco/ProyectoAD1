@@ -216,9 +216,10 @@ Y por último en *CREAR PERSONAJE* :
  Accedemos ya al *Usuario* Nico ya antes registrado, y probamos todas las funcionalidades:
 
 Primero le damos a *BUSCAR* que funciona igual que con el *Usuario INVITADO*:
+ACLARACIÓN❗❗: No hay distinción de mayúsculas y minúsculas, por lo que el *Usuario* en cuestión no tendrá que tener tanto cuidado a la hora de escribir el nombre del *Personaje*:  
 
+ <img width="1040" height="1022" alt="image" src="https://github.com/user-attachments/assets/def22e61-1493-4198-a353-51945ebd5888" />
 
- <img width="1086" height="1018" alt="image" src="https://github.com/user-attachments/assets/7dd5eae0-3f4e-4587-88a0-4e2c69be5dd4" />
 
  
 Después con la funcionalidad de *BORRAR* donde deja vacío todos los campos y elimina el *Personaje* de la lista :
