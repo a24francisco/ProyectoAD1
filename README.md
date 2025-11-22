@@ -182,6 +182,8 @@ Por último con el botón ocultar, ocultaríamos lo que son los paneles de *Inic
 
 ### Busquedas
 
+**USUARIO INVITADO**
+
 Si volvemos a iniciar la interfaz,nos aparecerá el usuario *INVITADO* el cual posee de una única funcionalidad, *Buscar*:
 
 Por lo que si buscamos un *Personaje* en el campo vacío al lado de *Nombre*,por ejemplo, Homer Simpson, aparecerán todos sus datos:
@@ -206,6 +208,24 @@ Y por último en *CREAR PERSONAJE* :
 
 
 <img width="1062" height="1017" alt="image" src="https://github.com/user-attachments/assets/81f412dd-ba44-479d-a996-e0b7d1d10e9d" />
+
+
+
+**USUARIO REGISTRADO**
+
+ Accedemos ya al *Usuario* Nico ya antes registrado, y probamos todas las funcionalidades:
+
+Primero le damos a *BUSCAR* que funciona igual que con el *Usuario INVITADO*:
+
+
+ <img width="1086" height="1018" alt="image" src="https://github.com/user-attachments/assets/7dd5eae0-3f4e-4587-88a0-4e2c69be5dd4" />
+
+ 
+Después con la funcionalidad de *BORRAR* donde deja vacío todos los campos y elimina el *Personaje* de la lista :
+
+
+
+
 
 ### Consultar la información del personaje
 ### Otras opciones (crear personaje nuevo)
