@@ -98,6 +98,7 @@ Una vez que el JAR esté generado, se ejecuta el siguiente comando desde el dire
 ```-jar nombre-del-archivo.jar```
 ### Manejo de errores
 Para este proyecto hemos usado los try catch para controlar las posibles excepciones que puedan salir en el manejo de la aplicación.
+
 [Volver al índice](#índice)
 ## Manual de usuario
 ### Registro
