@@ -224,6 +224,32 @@ Primero le damos a *BUSCAR* que funciona igual que con el *Usuario INVITADO*:
 Después con la funcionalidad de *BORRAR* donde deja vacío todos los campos y elimina el *Personaje* de la lista :
 
 
+<img width="1041" height="1018" alt="image" src="https://github.com/user-attachments/assets/00fd9721-4b84-4820-abd1-8f883231e1f0" />
+
+De hecho si ahora volvemos a buscar el *Personaje*, Homer Simpson en este caso, no aparecería, y saltaría la excepción:
+
+
+<img width="1040" height="1018" alt="image" src="https://github.com/user-attachments/assets/670fe453-4c4d-475c-a9fd-73515d88d440" />
+
+
+
+Ahora seguiremos con la funcionalidad de Editar, la cual si escribes dentro de alguno de los 5 campos existentes,(ya que *ID* está bloqueado) ya con el personaje buscado, y pulsas a continuación *EDITAR* se guardarían los cambios:
+
+Por lo que una vez editado algunos de los campos,si vuelves a buscar el mismo *Personaje*, los datos que hemos escrito nuevos quedarían ya guardados:
+
+<img width="1041" height="1017" alt="image" src="https://github.com/user-attachments/assets/81998160-d448-4d45-bb2c-e7bdc5ac8d33" />
+
+<img width="1040" height="1022" alt="image" src="https://github.com/user-attachments/assets/1709c9b7-5299-42c9-86bd-0b9a1be2fdd8" />
+
+En caso de querer editar específicamente el atributo edad, si introducimos algún caracter que no sea un número, nos saltará la excepción:
+
+
+<img width="1038" height="1017" alt="image" src="https://github.com/user-attachments/assets/b47f1c56-fd52-432d-b2ed-c9f10392564a" />
+
+
+Y también en caso de que queramos *EDITAR* sin antes *BUSCAR* un usuario que existe salta la siguiente excepción:
+
+<img width="1040" height="1016" alt="image" src="https://github.com/user-attachments/assets/ad04c997-5c2b-478e-bff6-60b285683da0" />
 
 
 
