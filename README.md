@@ -103,6 +103,27 @@ El archivo `pom.xml` incluye estas dependencias:
 Al abrir la aplicación, el usuario en cuestión verá la siguiente pantalla :
 <img width="1166" height="1016" alt="image" src="https://github.com/user-attachments/assets/ea5016ac-ccda-44b2-a613-786238c0a876" />
 
+En cuanto al usuario de registro,el que aparecerá siempre por defecto será el de *INVITADO*: 
+<img width="1098" height="1018" alt="image" src="https://github.com/user-attachments/assets/aa1b836d-7eb2-4c83-a1f5-2af5b9b2e0d6" />
+
+Para acceder a todas las funcionalidades de la aplicación,tendremos que registrarnos en la aplicación,desde el botón *Crear cuenta*(derecha de la imagen):
+<img width="958" height="1016" alt="image" src="https://github.com/user-attachments/assets/f29131ac-5271-48bf-acc5-2205acbe25cb" />
+
+El siguiente paso será introducir tanto el nombre de usuario como la contraseña:
+<img width="960" height="1017" alt="image" src="https://github.com/user-attachments/assets/f5afcb19-9c8f-4530-8064-c1ccfc11f76b" />
+
+Al pulsar el boton de *Registarse* aparecerá automáticamente un mensaje en pantalla que el usuario se registro de manera satisfactoria:
+<img width="960" height="1020" alt="image" src="https://github.com/user-attachments/assets/4108e210-492d-4cad-b5da-10083d69b069" />
+
+Si el usuario queda bien registrado después de enviar el mensaje en pantalla,se borrarán automáticamente los campos de *Usuario* y *Contraseña*:
+<img width="960" height="1016" alt="image" src="https://github.com/user-attachments/assets/49da19c0-bc04-43c4-9ceb-4438bb71d343" />
+
+Una vez hecho esto tendremos que abrir la pantalla de *Iniciar sesión* la cual abrirá un panel con *Usuario* y *Contraseña* otra vez, ocultando así el panel asociado a *Crear cuenta*:
+<img width="1086" height="1020" alt="image" src="https://github.com/user-attachments/assets/7af1b92f-45a2-413c-b793-f32fdc690e95" />
+
+Con esto introducimos el *Usuario* y la *Contraseña* que registramos:
+
+
 
 ### Busquedas
 ### Consultar la información del personaje
