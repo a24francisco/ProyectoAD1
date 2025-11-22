@@ -1,6 +1,5 @@
 package controller;
 
-
 import View.SimpsonFrame;
 
 import View.crearPersonajeJDialog;
@@ -129,6 +128,8 @@ public class SimpsonController {
                 if (val != null) {
                     u = val;
                     view.setUsuarioActivoLabel(view.getUsuarioIniciarTextField());
+                    view.setUsuarioInicioSesion("");
+                    view.setContraseñaInicio("");
                     System.out.println("Sesion iniciada correctamente");
                 } else {
                     JOptionPane.showMessageDialog(view, "Credenciales incorrectas");
@@ -148,11 +149,15 @@ public class SimpsonController {
                 String contraseña = view.getContraseñaRegistroTextField();
                 if (r.validarUsuarioRepetido(nombre)) {
                     JOptionPane.showMessageDialog(view, "Usuario ya existente");
+                } else if (nombre.toUpperCase().equals("INVITADO")) {
+                    JOptionPane.showMessageDialog(view, "Nombre de usuario no valido");
                 } else {
                     try {
                         u = new Usuario(nombre, contraseña);
                         r.addUser(u);
                         r.guardarHistorial();
+                        view.setUsuarioRegistro("");
+                        view.setContraseñaRegistro("");
                     } catch (IOException ex) {
                         Logger.getLogger(SimpsonController.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -205,17 +210,13 @@ public class SimpsonController {
                 if (view.getUsuarioActivoLabel().equals("INVITADO")) {
 
                     JOptionPane.showMessageDialog(view, "El invitado no puede acceder a la función de Editar Personaje");
-                } 
-                else if(view.getNombre().isEmpty()&&view.getId().isEmpty()){
-                     JOptionPane.showMessageDialog(view, "Se necesita buscar un usuario para poder modificarlo");
-                }
-                
-                
-                else {
+                } else if (view.getNombre().isEmpty() && view.getId().isEmpty()) {
+                    JOptionPane.showMessageDialog(view, "Se necesita buscar un usuario para poder modificarlo");
+                } else {
                     try {
                         String nombre = view.getNombre();
-                        Personaje buscado= u.filtrarNombre(nombre);
-                        if(buscado==null){
+                        Personaje buscado = u.filtrarNombre(nombre);
+                        if (buscado == null) {
                             return;
                         }
                         int edad = Integer.parseInt(view.getEdad());
@@ -227,10 +228,9 @@ public class SimpsonController {
                         u.delUsuario(nombre);
                         Personaje x = Personaje.crearPersonaje(Integer.parseInt(view.getId()), edad, cumple, genero, nombre, null, List.of(frase), trabajo, null);
                         u.crearPersonaje(x);
-                    }catch(NullPointerException e){
-                         JOptionPane.showMessageDialog(view, "El usuario no existe");
-                    } 
-                    catch (NumberFormatException e) {
+                    } catch (NullPointerException e) {
+                        JOptionPane.showMessageDialog(view, "El usuario no existe");
+                    } catch (NumberFormatException e) {
                         JOptionPane.showMessageDialog(view, "La edad no puede contener letras");
 
                     }

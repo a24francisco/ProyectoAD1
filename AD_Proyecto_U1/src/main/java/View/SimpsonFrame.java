@@ -641,7 +641,23 @@ public class SimpsonFrame extends javax.swing.JFrame {
 
         this.generoTextField.setText(genero);
     }
+    public void setContraseñaInicio(String contraseña) {
 
+        this.contraseñaInicioSesionTextField.setText(contraseña);
+    }
+    
+ public void setContraseñaRegistro(String contraseña) {
+
+        this.contraseñaRegistroTextField.setText(contraseña);
+    }
+  public void setUsuarioInicioSesion(String usuario) {
+
+        this.usuarioInicioSesionTextField.setText(usuario);
+    }
+   public void setUsuarioRegistro(String usuario) {
+
+        this.usuarioRegistroTextField.setText(usuario);
+    }
     public void setFrase(String frase) {
 
         this.fraseTextField.setText(frase);
