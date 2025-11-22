@@ -152,8 +152,6 @@ En caso de que la *Contraseña* no sea correcta o el *Usuario* no este registrad
 <img width="957" height="1012" alt="image" src="https://github.com/user-attachments/assets/59c23ba8-26ce-4c94-8c3d-bd52d87471c6" />
 
 
-
-
 ### Busquedas
 ### Consultar la información del personaje
 ### Otras opciones (crear personaje nuevo)
