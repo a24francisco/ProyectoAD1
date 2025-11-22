@@ -182,13 +182,30 @@ Por último con el botón ocultar, ocultaríamos lo que son los paneles de *Inic
 
 ### Busquedas
 
-Si volvemos a iniciar la interfaz,nos aparecerá el usuario *INVITADO* el cual posee de una única funcionalidad,*Buscar*:
+Si volvemos a iniciar la interfaz,nos aparecerá el usuario *INVITADO* el cual posee de una única funcionalidad, *Buscar*:
 
 Por lo que si buscamos un *Personaje* en el campo vacío al lado de *Nombre*,por ejemplo, Homer Simpson, aparecerán todos sus datos:
 
 
 <img width="1060" height="1016" alt="image" src="https://github.com/user-attachments/assets/0094a519-b20a-4193-b20b-791617aa86d6" />
 
+
+En caso de darle al botón *BORRAR* aparecerá esto:
+
+
+<img width="1062" height="1017" alt="image" src="https://github.com/user-attachments/assets/09c913bd-92f6-4d6d-b59f-47186ac3b147" />
+
+
+Si le das a *Editar*:
+
+
+<img width="1062" height="1017" alt="image" src="https://github.com/user-attachments/assets/47792dbc-3e64-4eb8-8f66-b7bebf05a9c5" />
+
+
+Y por último en *CREAR PERSONAJE* :
+
+
+<img width="1062" height="1017" alt="image" src="https://github.com/user-attachments/assets/81f412dd-ba44-479d-a996-e0b7d1d10e9d" />
 
 ### Consultar la información del personaje
 ### Otras opciones (crear personaje nuevo)
