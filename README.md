@@ -99,10 +99,14 @@ El archivo `pom.xml` incluye estas dependencias:
 ### Exportación de datos
 [Volver al índice](#índice)
 ## Manual de usuario
+### Registro
+Al abrir la aplicación, el usuario en cuestión verá la siguiente pantalla :
+<img width="1166" height="1016" alt="image" src="https://github.com/user-attachments/assets/ea5016ac-ccda-44b2-a613-786238c0a876" />
+
+
 ### Busquedas
 ### Consultar la información del personaje
 ### Otras opciones (crear personaje nuevo)
-### Registro
 ### Exportaciones
 [Volver al índice](#índice)
 ## Reparto de tareas
