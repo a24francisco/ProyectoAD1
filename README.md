@@ -1,7 +1,6 @@
 # Proyecto de los Simpson
 ## Índice
 - [Introducción](#introducción)
-    - [Postman](#postman)
 - [Manual técnico para desarrolladores](#manual-técnico-para-desarrolladores)
     - [Requisitos previos](#requisitos-previos)
     - [Estructura](#estructura)
@@ -16,7 +15,6 @@
     - [Consultar la información del personaje](#consultar-la-información-del-personaje)
     - [Otras opciones (crear personaje nuevo)](#otras-opciones-crear-personaje-nuevo)
     - [Registro](#registro)
-    - [Exportaciones](#exportaciones)
 - [Reparto de tareas](#reparto-de-tareas)
 - [Extras](#extras)
 - [Mejoras](#mejoras)
@@ -27,10 +25,9 @@
 Esto es una aplicación que nos permite realizar busquedas en la api de los Simpson.
 El programa de base nos dejara buscar por nombre y tendremos a nuestra disposición el ID del personaje, edad, trabajo, género, cumpleaños y alguna frase tipica.
 
-Tendremos la opción de crearnos un usuario e iniciar sesion para tener un registro de los nombres que buscamos en la aplicación ademas de poder crear, editar y eliminar personajes.
+Tendremos la opción de crearnos un usuario e iniciar sesion para tener un registro de los nombres que buscamos en la aplicación ademas de poder crear, editar y eliminar personajes si tenemos la sesion iniciada con un usuario.
 
 ---
-### Postman
 [Volver al índice](#índice)
 ## Manual técnico para desarrolladores
 ### Requisitos previos
@@ -94,6 +91,7 @@ El archivo `pom.xml` incluye estas dependencias:
 </dependencies>
 ```
 ### Ejecución del proyecto
+
 ### Manejo de la caché
 ### Manejo de errores
 ### Exportación de datos
@@ -321,8 +319,7 @@ Lo borramos, y lo volvemos a *BUSCAR* :
 
 Haciendo esto,comprobamos que  *BUSCAR, BORRAR * y *EDITAR* funcionan correctamente con el nuevo *PERSONAJE* creado.
 
-### Exportaciones
-[Volver al índice](#índice)
+
 ## Reparto de tareas
 [Volver al índice](#índice)
 ## Extras
