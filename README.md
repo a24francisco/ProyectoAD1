@@ -218,8 +218,12 @@ Y por último en *CREAR PERSONAJE* :
 Primero le damos a *BUSCAR* que funciona igual que con el *Usuario INVITADO*:
 ACLARACIÓN❗❗: No hay distinción de mayúsculas y minúsculas, por lo que el *Usuario* en cuestión no tendrá que tener tanto cuidado a la hora de escribir el nombre del *Personaje*:  
 
- <img width="1040" height="1022" alt="image" src="https://github.com/user-attachments/assets/def22e61-1493-4198-a353-51945ebd5888" />
+<img width="1081" height="1020" alt="image" src="https://github.com/user-attachments/assets/a68ad85b-e8d6-4fbe-8a7b-108919c9d5b7" />
 
+
+En caso de volver a darle a *BUSCAR* teniendo el mismo *PERSONAJE* buscado, podremos ver también que cada vez, se genera una frase diferente:
+
+<img width="1032" height="1016" alt="image" src="https://github.com/user-attachments/assets/4878083c-5304-4647-b4f1-f295975ecd7d" />
 
  
 Después con la funcionalidad de *BORRAR* donde deja vacío todos los campos y elimina el *Personaje* de la lista :
