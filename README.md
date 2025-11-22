@@ -7,9 +7,7 @@
     - [Metodología](#metodología)
     - [Configuración de Maven](#configuración-de-maven)
     - [Ejecución del proyecto](#ejecución-del-proyecto)
-    - [Manejo de la caché](#manejo-de-la-caché)
     - [Manejo de errores](#manejo-de-errores)
-    - [Exportación de datos](#exportación-de-datos)
 - [Manual de usuario](#manual-de-usuario)
     - [Busquedas](#busquedas)
     - [Consultar la información del personaje](#consultar-la-información-del-personaje)
@@ -91,10 +89,15 @@ El archivo `pom.xml` incluye estas dependencias:
 </dependencies>
 ```
 ### Ejecución del proyecto
-
-### Manejo de la caché
+**Desde el IDE de NetBeans:**
+1. Importar el proyecto como un proyecto Maven.
+2. Asegurarse de que las dependencias estén instaladas en el `pom.xml`.
+3. Ejecutar la clase `Main` para iniciar la aplicación.
+**Desde la terminal:**
+Una vez que el JAR esté generado, se ejecuta el siguiente comando desde el directorio donde se encuentre el .jar generado:
+```-jar nombre-del-archivo.jar```
 ### Manejo de errores
-### Exportación de datos
+Para este proyecto hemos usado los try catch para controlar las posibles excepciones que puedan salir en el manejo de la aplicación.
 [Volver al índice](#índice)
 ## Manual de usuario
 ### Registro
