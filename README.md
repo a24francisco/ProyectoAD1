@@ -165,6 +165,8 @@ En caso de *Iniciar sesión* con el *Usuario* y *Contraseña* creados anteriorme
 
 <img width="962" height="1012" alt="image" src="https://github.com/user-attachments/assets/56ae2a78-08cf-4dca-84f6-7b704334cd61" />
 
+<img width="1093" height="1011" alt="image" src="https://github.com/user-attachments/assets/2a8cfa6a-4833-44df-9d0d-857a758b2078" />
+
 
 En caso de que la *Contraseña* no sea correcta o el *Usuario* no este registrado, aparecerá el siguiente mensaje:
 
@@ -172,9 +174,22 @@ En caso de que la *Contraseña* no sea correcta o el *Usuario* no este registrad
 
 <img width="957" height="1012" alt="image" src="https://github.com/user-attachments/assets/59c23ba8-26ce-4c94-8c3d-bd52d87471c6" />
 
+Por último con el botón ocultar, ocultaríamos lo que son los paneles de *Iniciar sesión* y *Crear cuenta*:
+
+
+<img width="1062" height="1017" alt="image" src="https://github.com/user-attachments/assets/8cf63836-f960-44a3-81d3-2278e16751d4" />
 
 
 ### Busquedas
+
+Si volvemos a iniciar la interfaz,nos aparecerá el usuario *INVITADO* el cual posee de una única funcionalidad,*Buscar*:
+
+Por lo que si buscamos un *Personaje* en el campo vacío al lado de *Nombre*,por ejemplo, Homer Simpson, aparecerán todos sus datos:
+
+
+<img width="1060" height="1016" alt="image" src="https://github.com/user-attachments/assets/0094a519-b20a-4193-b20b-791617aa86d6" />
+
+
 ### Consultar la información del personaje
 ### Otras opciones (crear personaje nuevo)
 ### Exportaciones
