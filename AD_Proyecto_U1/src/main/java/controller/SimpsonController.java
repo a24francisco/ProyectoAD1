@@ -205,10 +205,19 @@ public class SimpsonController {
                 if (view.getUsuarioActivoLabel().equals("INVITADO")) {
 
                     JOptionPane.showMessageDialog(view, "El invitado no puede acceder a la función de Editar Personaje");
-                } else {
+                } 
+                else if(view.getNombre().isEmpty()&&view.getId().isEmpty()){
+                     JOptionPane.showMessageDialog(view, "Se necesita buscar un usuario para poder modificarlo");
+                }
+                
+                
+                else {
                     try {
                         String nombre = view.getNombre();
-
+                        Personaje buscado= u.filtrarNombre(nombre);
+                        if(buscado==null){
+                            return;
+                        }
                         int edad = Integer.parseInt(view.getEdad());
 
                         String cumple = view.getCumpleaños();

@@ -15,7 +15,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-
+/**
+ *
+ * @author Roi
+ */
 public class Usuario {
 
     private String nombre;
