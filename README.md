@@ -102,54 +102,76 @@ El archivo `pom.xml` incluye estas dependencias:
 ### Registro
 Al abrir la aplicación, el usuario en cuestión verá la siguiente pantalla :
 
+
 <img width="1166" height="1016" alt="image" src="https://github.com/user-attachments/assets/ea5016ac-ccda-44b2-a613-786238c0a876" />
+
 
 En cuanto al usuario de registro,el que aparecerá siempre por defecto será el de *INVITADO*: 
 
+
 <img width="1098" height="1018" alt="image" src="https://github.com/user-attachments/assets/aa1b836d-7eb2-4c83-a1f5-2af5b9b2e0d6" />
+
 
 Para acceder a todas las funcionalidades de la aplicación,tendremos que registrarnos en la aplicación,desde el botón *Crear cuenta*(derecha de la imagen):
 
+
 <img width="958" height="1016" alt="image" src="https://github.com/user-attachments/assets/f29131ac-5271-48bf-acc5-2205acbe25cb" />
+
 
 El siguiente paso será introducir tanto el nombre de usuario como la contraseña:
 
+
 <img width="960" height="1017" alt="image" src="https://github.com/user-attachments/assets/f5afcb19-9c8f-4530-8064-c1ccfc11f76b" />
+
 
 Al pulsar el boton de *Registarse* aparecerá automáticamente un mensaje en pantalla que el usuario se registro de manera satisfactoria:
 
+
 <img width="960" height="1020" alt="image" src="https://github.com/user-attachments/assets/4108e210-492d-4cad-b5da-10083d69b069" />
+
 
 Si el usuario queda bien registrado después de enviar el mensaje en pantalla,se borrarán automáticamente los campos de *Usuario* y *Contraseña*:
 
+
 <img width="960" height="1016" alt="image" src="https://github.com/user-attachments/assets/49da19c0-bc04-43c4-9ceb-4438bb71d343" />
+
 
 Una vez hecho esto tendremos que abrir la pantalla de *Iniciar sesión* la cual abrirá un panel con *Usuario* y *Contraseña* otra vez, ocultando así el panel asociado a *Crear cuenta*:
 
+
 <img width="1086" height="1020" alt="image" src="https://github.com/user-attachments/assets/7af1b92f-45a2-413c-b793-f32fdc690e95" />
+
 
 Con esto introducimos el *Usuario* y la *Contraseña* que registramos:
 
+
 <img width="962" height="1012" alt="image" src="https://github.com/user-attachments/assets/c438e638-e2f7-47a5-93b7-c85d6a8ee37a" />
 
+
 Una vez metidos estos datos le daremos a *Acceder* y automáticamente se sustituirá el nombre de *INVITADO*(esquina superior derecha) en este caso por el de Nico(Usuario metido para el inicio de sesión),dejando los campos de *Usuario* y *Contraseña* vacíos :
+
 
 <img width="1093" height="1011" alt="image" src="https://github.com/user-attachments/assets/69096279-2804-4241-87f9-762e6672b169" />
 
 
 En caso de que cerremos la aplicación y volvamos a estar con el usuario *INVITADO* por defecto, si volvemos a registrarnos con el mismo *Usuario* nos aparecerá un mensaje de error ya que el *Usuario* ya está registrado: 
 
+
 <img width="960" height="1018" alt="image" src="https://github.com/user-attachments/assets/9300f89b-35a8-48e9-94d1-0e8db09a43e7" />
+
 
 En caso de *Iniciar sesión* con el *Usuario* y *Contraseña* creados anteriormente, volverá dejar *Acceder* al mismo usuario: 
 
-<img width="957" height="1017" alt="image" src="https://github.com/user-attachments/assets/fb2f36bb-515a-4d36-abc9-128506834b2d" />
+
+<img width="962" height="1012" alt="image" src="https://github.com/user-attachments/assets/56ae2a78-08cf-4dca-84f6-7b704334cd61" />
+
 
 En caso de que la *Contraseña* no sea correcta o el *Usuario* no este registrado, aparecerá el siguiente mensaje:
 
 <img width="957" height="1020" alt="image" src="https://github.com/user-attachments/assets/1714958c-a3a0-45c5-9644-06e0d0d36547" />
 
 <img width="957" height="1012" alt="image" src="https://github.com/user-attachments/assets/59c23ba8-26ce-4c94-8c3d-bd52d87471c6" />
+
 
 
 ### Busquedas
@@ -165,6 +187,7 @@ En caso de que la *Contraseña* no sea correcta o el *Usuario* no este registrad
 [Volver al índice](#índice)
 ## Conclusiones
 [Volver al índice](#índice)
+
 ## Autores
 Francisco Alende Antelo [@fran](https://github.com/a24francisco)  
 Nicolás Sanjuás Casal [@nico](https://github.com/Nicosanju)  
