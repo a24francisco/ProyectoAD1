@@ -9,10 +9,9 @@
     - [Ejecución del proyecto](#ejecución-del-proyecto)
     - [Manejo de errores](#manejo-de-errores)
 - [Manual de usuario](#manual-de-usuario)
-    - [Busquedas](#busquedas)
-    - [Consultar la información del personaje](#consultar-la-información-del-personaje)
-    - [Otras opciones (crear personaje nuevo)](#otras-opciones-crear-personaje-nuevo)
     - [Registro](#registro)
+    - [Busquedas](#busquedas)
+    - [Otras opciones (crear personaje nuevo)](#otras-opciones-crear-personaje-nuevo)
 - [Reparto de tareas](#reparto-de-tareas)
 - [Mejoras](#mejoras)
 - [Conclusiones](#conclusiones)
@@ -113,7 +112,7 @@ En cuanto al usuario de registro,el que aparecerá siempre por defecto será el 
 <img width="1098" height="1018" alt="image" src="https://github.com/user-attachments/assets/aa1b836d-7eb2-4c83-a1f5-2af5b9b2e0d6" />
 
 
-Para acceder a todas las funcionalidades de la aplicación,tendremos que registrarnos en la aplicación,desde el botón *Crear cuenta*(esquina inferior derecha de la imagen):
+Para acceder a todas las funcionalidades de la aplicación,tendremos que registrarnos, desde el botón *Crear cuenta*(esquina inferior derecha de la imagen):
 
 
 <img width="958" height="1016" alt="image" src="https://github.com/user-attachments/assets/f29131ac-5271-48bf-acc5-2205acbe25cb" />
@@ -125,13 +124,13 @@ El siguiente paso será introducir tanto el nombre de usuario como la contraseñ
 <img width="960" height="1017" alt="image" src="https://github.com/user-attachments/assets/f5afcb19-9c8f-4530-8064-c1ccfc11f76b" />
 
 
-Al pulsar el boton de *Registarse* aparecerá automáticamente un mensaje en pantalla que el usuario se registro de manera satisfactoria:
+Al pulsar el boton de *Registarse* aparecerá automáticamente un mensaje en pantalla indicando que el usuario se registró de manera satisfactoria:
 
 
 <img width="960" height="1020" alt="image" src="https://github.com/user-attachments/assets/4108e210-492d-4cad-b5da-10083d69b069" />
 
 
-Si el usuario queda bien registrado después de enviar el mensaje en pantalla,se borrarán automáticamente los campos de *Usuario* y *Contraseña*:
+Si el usuario queda bien registrado, después de enviar el mensaje en pantalla se borrarán automáticamente los campos de *Usuario* y *Contraseña*:
 
 
 <img width="960" height="1016" alt="image" src="https://github.com/user-attachments/assets/49da19c0-bc04-43c4-9ceb-4438bb71d343" />
@@ -155,10 +154,11 @@ Una vez metidos estos datos le daremos a *Acceder* y automáticamente se sustitu
 <img width="1093" height="1011" alt="image" src="https://github.com/user-attachments/assets/69096279-2804-4241-87f9-762e6672b169" />
 
 
-En caso de que cerremos la aplicación y volvamos a estar con el usuario *INVITADO* por defecto, si volvemos a registrarnos con el mismo *Usuario* nos aparecerá un mensaje de error ya que el *Usuario* ya está registrado: 
+En caso de que cerremos la aplicación y volvamos a estar con el usuario *INVITADO* por defecto, si volvemos a registrarnos con el mismo usuario nos aparecerá un mensaje de error ya que el *Usuario* ya está registrado: 
 
 
 <img width="960" height="1018" alt="image" src="https://github.com/user-attachments/assets/9300f89b-35a8-48e9-94d1-0e8db09a43e7" />
+
 
 Como también nos dará el mismo error si intentamos crear una clase *INVITADO*(sin distinción de mayúsculas y minúsculas):
 
@@ -166,7 +166,7 @@ Como también nos dará el mismo error si intentamos crear una clase *INVITADO*(
 <img width="1097" height="1018" alt="image" src="https://github.com/user-attachments/assets/44503dd9-e881-4878-af1e-0f5209586e16" />
 
 
-En caso de *Iniciar sesión* con el *Usuario* y *Contraseña* creados anteriormente, volverá dejar *Acceder* al mismo usuario: 
+Si cerramos la interfaz y volvemos a *Iniciar sesión* con el *Usuario* y *Contraseña* creados anteriormente, volverá dejar *Acceder* al mismo usuario: 
 
 
 <img width="962" height="1012" alt="image" src="https://github.com/user-attachments/assets/56ae2a78-08cf-4dca-84f6-7b704334cd61" />
@@ -190,9 +190,9 @@ Por último con el botón ocultar, ocultaríamos lo que son los paneles de *Inic
 
 **USUARIO INVITADO**
 
-Si volvemos a iniciar la interfaz,nos aparecerá el usuario *INVITADO* el cual posee de una única funcionalidad, *Buscar*:
+Si volvemos a iniciar la interfaz,nos aparecerá el usuario *INVITADO* el cual posee de una única funcionalidad, *BUSCAR*:
 
-Por lo que si buscamos un *Personaje* en el campo vacío al lado de *Nombre*,por ejemplo, Homer Simpson, aparecerán todos sus datos:
+Por lo que si buscamos un *Personaje* en el campo vacío al lado de *Nombre*, en este caso buscando Homer Simpson, aparecerán todos sus datos:
 
 
 <img width="1060" height="1016" alt="image" src="https://github.com/user-attachments/assets/0094a519-b20a-4193-b20b-791617aa86d6" />
@@ -204,7 +204,7 @@ En caso de darle al botón *BORRAR* aparecerá esto:
 <img width="1062" height="1017" alt="image" src="https://github.com/user-attachments/assets/09c913bd-92f6-4d6d-b59f-47186ac3b147" />
 
 
-Si le das a *Editar*:
+Si le das a *EDITAR*:
 
 
 <img width="1062" height="1017" alt="image" src="https://github.com/user-attachments/assets/47792dbc-3e64-4eb8-8f66-b7bebf05a9c5" />
@@ -221,7 +221,7 @@ Y por último en *CREAR PERSONAJE* :
 
  Accedemos ya al *Usuario* Nico ya antes registrado, y probamos todas las funcionalidades:
 
-Primero le damos a *BUSCAR* que funciona igual que con el *Usuario INVITADO*.
+Primero le damos a *BUSCAR* que funciona igual que con el usuario *INVITADO*.
 
 ACLARACIÓN❗❗: No hay distinción de mayúsculas y minúsculas, por lo que el *Usuario* en cuestión no tendrá que tener tanto cuidado a la hora de escribir el nombre del *Personaje*:  
 
@@ -247,9 +247,9 @@ De hecho si ahora volvemos a buscar el *Personaje*, Homer Simpson en este caso, 
 
 
 
-Ahora seguiremos con la funcionalidad de Editar, la cual si escribes dentro de alguno de los 5 campos existentes,(ya que *ID* está bloqueado) ya con el personaje buscado, y pulsas a continuación *EDITAR* se guardarían los cambios:
+Ahora seguiremos con la funcionalidad de Editar, la cual si escribes dentro de alguno de los 5 campos existentes,(ya que *ID* está bloqueado) ya con el personaje buscado, y pulsas a continuación *EDITAR* se guardarían los cambios.
 
-Por lo que una vez editado algunos de los campos,si vuelves a buscar el mismo *Personaje*, los datos que hemos escrito nuevos quedarían ya guardados:
+Por lo que una vez editado algunos de los campos, si vuelves a buscar el mismo *Personaje*, los datos que hemos escrito nuevos quedarían ya guardados:
 
 <img width="1041" height="1017" alt="image" src="https://github.com/user-attachments/assets/81998160-d448-4d45-bb2c-e7bdc5ac8d33" />
 
@@ -286,7 +286,7 @@ En caso contrario, se mostrará un mensaje un mensaje en pantalla:
 <img width="1102" height="1017" alt="image" src="https://github.com/user-attachments/assets/b2481b4d-7fda-42c6-8dcf-2428be5e78d0" />
 
 
-También hay una excepción con el *ID*, por lo que si introduces una edad con otro caracter q no sea número, te saltará este mensaje:
+También hay una excepción con el *ID*, por lo que si introduces un ID con otro carácter q no sea número, te saltará este mensaje:
 
 
 <img width="1087" height="1016" alt="image" src="https://github.com/user-attachments/assets/ebb8d6a1-80a3-4091-84ef-d6cbc1c5cb19" />
