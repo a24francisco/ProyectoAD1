@@ -14,7 +14,6 @@
     - [Otras opciones (crear personaje nuevo)](#otras-opciones-crear-personaje-nuevo)
     - [Registro](#registro)
 - [Reparto de tareas](#reparto-de-tareas)
-- [Extras](#extras)
 - [Mejoras](#mejoras)
 - [Conclusiones](#conclusiones)
 - [Autores](#autores)
@@ -325,11 +324,15 @@ Haciendo esto,comprobamos que  *BUSCAR, BORRAR * y *EDITAR* funcionan correctame
 
 
 ## Reparto de tareas
-[Volver al índice](#índice)
-## Extras
+Roi fue el encargado de la gestión de usuarios, desarrollando los métodos de registro, inicio de sesión y  validación de datos. Nico se ocupó de la parte visual del proyecto, diseñando y organizando la interfaz para asegurar una experiencia de usuario clara. Fran trabajó en toda la gestión de personajes y en la conexión con la API, permitiendo buscar, crear y modificar personajes, además de desarrollar la comunicación con la API necesaria para obtener los datos. 
+El controlador fue un trabajo completamente colaborativo en el que todos participamos, compartiendo ideas, revisando código, resolviendo problemas de forma conjunta y buscando siempre la mejor manera de integrar cada módulo, lo que permitió mejorar la calidad general del proyecto y mantener una arquitectura sólida, escalable y bien estructurada.
+
 [Volver al índice](#índice)
 ## Mejoras
-[Volver al índice](#índice)
+- Ventana de login e inicio de sesión independiente
+- Exportación de datos de búsqueda que ya almacenamos
+- Ampliar la búsqueda a mas campos como puede ser el id 
+- Interfaz interactiva para poder moverse entre frases del personaje.
 ## Conclusiones
 [Volver al índice](#índice)
 
