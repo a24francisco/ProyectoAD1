@@ -334,6 +334,12 @@ El controlador fue un trabajo completamente colaborativo en el que todos partici
 - Ampliar la búsqueda a mas campos como puede ser el id 
 - Interfaz interactiva para poder moverse entre frases del personaje.
 ## Conclusiones
+Cada miembro del proyecto entre las tareas de planificación, investigación, programación del código y solución de problemas y errores estimamos que entre clase y horas de casa le dedicamos una media de 21 horas.
+
+Creemos que la SimpsonApi cumple con los requisitos solicitados ya que conseguimos conectarnos  a la API de manera satisfactoria. También nos permite crear, modificar o eliminar personajes dependiendo del usuario logueado en es momento. Para los usuarios realizamos un registro y un inicio de sesión en el cual se guardan todas sus acciones. La interfaz gráfica es clara lo que permite un fácil manejo de la aplicación con botones y menús para acceder a las distintas funciones que existen.
+
+Con la creación de este proyecto hemos podido aprender el como acceder a una API y manejarla a través de la aplicación, además de mejorar en lo enseñado en cuanto a usar los archivos JSON y para la creación y guardado de usuarios más la implementación de archivos externos y lectura de esos mismos documentos, también ha sido la primera vez que hacemos un proyecto usando GIT y hemos podido apreciar las ventajas e inconvenientes que conlleva hacer un proyecto de este calibre.
+
 [Volver al índice](#índice)
 
 ## Autores
