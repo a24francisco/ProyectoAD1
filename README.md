@@ -113,7 +113,7 @@ En cuanto al usuario de registro,el que aparecerá siempre por defecto será el 
 <img width="1098" height="1018" alt="image" src="https://github.com/user-attachments/assets/aa1b836d-7eb2-4c83-a1f5-2af5b9b2e0d6" />
 
 
-Para acceder a todas las funcionalidades de la aplicación,tendremos que registrarnos en la aplicación,desde el botón *Crear cuenta*(derecha de la imagen):
+Para acceder a todas las funcionalidades de la aplicación,tendremos que registrarnos en la aplicación,desde el botón *Crear cuenta*(esquina inferior derecha de la imagen):
 
 
 <img width="958" height="1016" alt="image" src="https://github.com/user-attachments/assets/f29131ac-5271-48bf-acc5-2205acbe25cb" />
@@ -266,8 +266,6 @@ Y también en caso de que queramos *EDITAR* sin antes *BUSCAR* un usuario que ex
 <img width="1040" height="1016" alt="image" src="https://github.com/user-attachments/assets/ad04c997-5c2b-478e-bff6-60b285683da0" />
 
 
-
-### Consultar la información del personaje
 ### Otras opciones (crear personaje nuevo)
 
 En cuanto a esta funcionalidad, abarca la integración de nuevos *PERSONAJES* , dentro de la aplicación, pulsando en el botón *CREAR PERSONAJE*.
@@ -320,7 +318,7 @@ Lo borramos, y lo volvemos a *BUSCAR* :
 <img width="1095" height="1021" alt="image" src="https://github.com/user-attachments/assets/2a3c26e3-86fe-481a-8fb1-44f2c83ee07d" />
 
 
-Haciendo esto,comprobamos que  *BUSCAR, BORRAR * y *EDITAR* funcionan correctamente con el nuevo *PERSONAJE* creado.
+Haciendo esto,comprobamos que  *BUSCAR* ,*BORRAR * y *EDITAR* funcionan correctamente con el nuevo *PERSONAJE* creado.
 
 
 ## Reparto de tareas
